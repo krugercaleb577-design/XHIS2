@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Ticket | First Line Defenders</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+   <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+        /* =========================================
+           TICKET PAGE
+        ========================================= */
+
+        .ticket-page {
+            min-height: 100vh;
+            background: #f5f8fc;
+        }
+
+        .ticket-hero {
+            padding: 75px 7% 65px;
+
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(34, 167, 255, 0.22),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #06172c,
+                    #0b416c
+                );
+        }
+
+        .ticket-hero-content {
+            max-width: 1250px;
+            margin: auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            margin-bottom: 25px;
+
+            color: #91b5d0;
+
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        .breadcrumb a:hover {
+            color: white;
+        }
+
+        .ticket-hero h1 {
+            margin-bottom: 15px;
+
+            font-size: clamp(35px, 4vw, 55px);
+            line-height: 1.1;
+
+            letter-spacing: -1.5px;
+        }
+
+        .ticket-hero p {
+            max-width: 650px;
+
+            color: #bad0e2;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           TICKET CONTENT
+        ========================================= */
+
+        .ticket-container {
+            max-width: 1250px;
+
+            margin: -35px auto 80px;
+
+            padding: 0 5%;
+
+            position: relative;
+            z-index: 5;
+        }
+
+        .ticket-layout {
+            display: grid;
+
+            grid-template-columns: 1fr 330px;
+
+            gap: 25px;
+        }
+
+        .ticket-form-card {
+            padding: 35px;
+
+            background: white;
+
+            border: 1px solid #e1e9f1;
+
+            border-radius: 16px;
+
+            box-shadow: 0 20px 50px rgba(7, 27, 51, 0.09);
+        }
+
+        .form-header {
+            margin-bottom: 30px;
+
+            padding-bottom: 20px;
+
+            border-bottom: 1px solid #e7edf3;
+        }
+
+        .form-header h2 {
+            margin-bottom: 5px;
+
+            color: #071b33;
+
+            font-size: 22px;
+        }
+
+        .form-header p {
+            color: #728397;
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           FORM
+        ========================================= */
+
+        .form-row {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-row .form-group {
+            margin-bottom: 0;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #26384b;
+
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .required {
+            color: #e25353;
+        }
+
+        .form-control {
+            width: 100%;
+
+            padding: 13px 14px;
+
+            color: #26384b;
+
+            background: #fbfcfe;
+
+            border: 1px solid #dce5ed;
+
+            border-radius: 8px;
+
+            outline: none;
+
+            font-family: inherit;
+            font-size: 12px;
+
+            transition: 0.2s ease;
+        }
+
+        .form-control:focus {
+            background: white;
+
+            border-color: #1594e3;
+
+            box-shadow: 0 0 0 3px rgba(21, 148, 227, 0.08);
+        }
+
+        textarea.form-control {
+            min-height: 140px;
+
+            resize: vertical;
+        }
+
+        select.form-control {
+            cursor: pointer;
+        }
+
+        .input-icon {
+            position: relative;
+        }
+
+        .input-icon i {
+            position: absolute;
+
+            top: 50%;
+            left: 14px;
+
+            color: #8292a3;
+
+            transform: translateY(-50%);
+
+            pointer-events: none;
+        }
+
+        .input-icon .form-control {
+            padding-left: 38px;
+        }
+
+
+        /* =========================================
+           PRIORITY
+        ========================================= */
+
+        .priority-options {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 10px;
+        }
+
+        .priority-option {
+            position: relative;
+        }
+
+        .priority-option input {
+            position: absolute;
+
+            opacity: 0;
+        }
+
+        .priority-label {
+            display: block;
+
+            padding: 13px 8px;
+
+            text-align: center;
+
+            color: #66778a;
+
+            background: #f9fbfd;
+
+            border: 1px solid #dfe7ee;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-size: 10px;
+            font-weight: 700;
+
+            transition: 0.2s ease;
+        }
+
+        .priority-label:hover {
+            border-color: #aac8dd;
+        }
+
+        .priority-option input:checked + .priority-label {
+            color: #0879d1;
+
+            background: #eaf5ff;
+
+            border-color: #0879d1;
+        }
+
+        .priority-description {
+            display: block;
+
+            margin-top: 3px;
+
+            font-size: 8px;
+            font-weight: 500;
+        }
+
+
+        /* =========================================
+           ATTACHMENT
+        ========================================= */
+
+        .upload-area {
+            padding: 25px;
+
+            text-align: center;
+
+            background: #f9fbfd;
+
+            border: 1.5px dashed #cbd8e4;
+
+            border-radius: 10px;
+
+            cursor: pointer;
+
+            transition: 0.2s ease;
+        }
+
+        .upload-area:hover {
+            background: #f1f8fe;
+
+            border-color: #2ca8f0;
+        }
+
+        .upload-area i {
+            margin-bottom: 8px;
+
+            color: #168bd3;
+
+            font-size: 24px;
+        }
+
+        .upload-area strong {
+            display: block;
+
+            color: #33485d;
+
+            font-size: 11px;
+        }
+
+        .upload-area span {
+            display: block;
+
+            margin-top: 4px;
+
+            color: #8b9aaa;
+
+            font-size: 9px;
+        }
+
+        .upload-area input {
+            display: none;
+        }
+
+
+        /* =========================================
+           FORM FOOTER
+        ========================================= */
+
+        .form-actions {
+            display: flex;
+
+            justify-content: flex-end;
+
+            gap: 10px;
+
+            margin-top: 30px;
+
+            padding-top: 25px;
+
+            border-top: 1px solid #e7edf3;
+        }
+
+        .reset-button,
+        .submit-ticket-button {
+            padding: 13px 20px;
+
+            border-radius: 8px;
+
+            font-family: inherit;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            cursor: pointer;
+
+            transition: 0.25s ease;
+        }
+
+        .reset-button {
+            color: #637487;
+
+            background: white;
+
+            border: 1px solid #d8e2eb;
+        }
+
+        .reset-button:hover {
+            background: #f5f8fb;
+        }
+
+        .submit-ticket-button {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            color: white;
+
+            background: #0879d1;
+
+            border: none;
+
+            box-shadow: 0 8px 20px rgba(8, 121, 209, 0.2);
+        }
+
+        .submit-ticket-button:hover {
+            background: #075f9f;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================================
+           SIDEBAR
+        ========================================= */
+
+        .ticket-sidebar {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 18px;
+        }
+
+        .sidebar-card {
+            padding: 23px;
+
+            background: white;
+
+            border: 1px solid #e1e9f1;
+
+            border-radius: 14px;
+
+            box-shadow: 0 10px 30px rgba(7, 27, 51, 0.05);
+        }
+
+        .sidebar-card h3 {
+            margin-bottom: 17px;
+
+            color: #071b33;
+
+            font-size: 14px;
+        }
+
+        .response-item {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 11px;
+
+            padding: 12px 0;
+
+            border-bottom: 1px solid #edf1f5;
+        }
+
+        .response-item:last-child {
+            border-bottom: none;
+        }
+
+        .response-icon {
+            width: 31px;
+            height: 31px;
+
+            display: grid;
+
+            place-items: center;
+
+            flex-shrink: 0;
+
+            color: #0879d1;
+
+            background: #eaf5ff;
+
+            border-radius: 7px;
+
+            font-size: 11px;
+        }
+
+        .response-item strong {
+            display: block;
+
+            color: #35495d;
+
+            font-size: 10px;
+        }
+
+        .response-item span {
+            display: block;
+
+            margin-top: 2px;
+
+            color: #8493a2;
+
+            font-size: 8px;
+        }
+
+        .sla-table {
+            width: 100%;
+
+            border-collapse: collapse;
+        }
+
+        .sla-table td {
+            padding: 9px 0;
+
+            color: #718296;
+
+            border-bottom: 1px solid #edf1f5;
+
+            font-size: 9px;
+        }
+
+        .sla-table td:last-child {
+            color: #26384b;
+
+            text-align: right;
+
+            font-weight: 700;
+        }
+
+        .sla-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .emergency-card {
+            color: white;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #102e4b,
+                    #075c91
+                );
+
+            border: none;
+        }
+
+        .emergency-card h3 {
+            color: white;
+        }
+
+        .emergency-card p {
+            margin-bottom: 15px;
+
+            color: #b9d2e5;
+
+            font-size: 10px;
+        }
+
+        .emergency-contact {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: white;
+
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .emergency-contact i {
+            color: #62c9ff;
+        }
+
+
+        /* =========================================
+           SUCCESS MESSAGE
+        ========================================= */
+
+        .ticket-success {
+            display: none;
+
+            padding: 35px;
+
+            text-align: center;
+
+            background: white;
+
+            border: 1px solid #ccefe1;
+
+            border-radius: 16px;
+
+            box-shadow: 0 20px 50px rgba(7, 27, 51, 0.08);
+        }
+
+        .ticket-success.show {
+            display: block;
+        }
+
+        .success-icon {
+            width: 65px;
+            height: 65px;
+
+            display: grid;
+
+            place-items: center;
+
+            margin: 0 auto 18px;
+
+            color: #16a673;
+
+            background: #e7faf2;
+
+            border-radius: 50%;
+
+            font-size: 27px;
+        }
+
+        .ticket-success h2 {
+            margin-bottom: 7px;
+
+            color: #071b33;
+
+            font-size: 24px;
+        }
+
+        .ticket-success p {
+            color: #718296;
+
+            font-size: 12px;
+        }
+
+        .ticket-reference {
+            display: inline-block;
+
+            margin: 20px 0;
+
+            padding: 12px 20px;
+
+            color: #0879d1;
+
+            background: #eaf5ff;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+            font-weight: 800;
+
+            letter-spacing: 1px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 950px) {
+
+            .ticket-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .ticket-sidebar {
+                display: grid;
+
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .emergency-card {
+                grid-column: span 2;
+            }
+
+        }
+
+
+        @media (max-width: 650px) {
+
+            .ticket-hero {
+                padding: 55px 6%;
+            }
+
+            .ticket-container {
+                padding: 0 4%;
+            }
+
+            .ticket-form-card {
+                padding: 23px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .priority-options {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .ticket-sidebar {
+                display: flex;
+            }
+
+            .emergency-card {
+                grid-column: auto;
+            }
+
+            .form-actions {
+                flex-direction: column-reverse;
+            }
+
+            .reset-button,
+            .submit-ticket-button {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================
+     HEADER
+========================================= -->
+
+<header class="site-header">
+
+    <nav class="navbar">
+
+        <a href="../index.html" class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-network-wired"></i>
+            </div>
+
+            <div>
+                <span class="brand-name">First Line Defenders</span>
+                <span class="brand-subtitle">IT Service Desk</span>
+            </div>
+
+        </a>
+
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+
+        <ul class="nav-links" id="navLinks">
+
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+
+            <li>
+                <a href="tickets.html" class="active">Submit Ticket</a>
+            </li>
+
+            <li>
+                <a href="knowledgebase.html">Knowledge Base</a>
+            </li>
+
+            <li>
+                <a href="team.html">Team</a>
+            </li>
+
+            <li>
+                <a href="dashboard.html">Dashboard</a>
+            </li>
+
+            <li>
+                <a href="reports.html">Reports</a>
+            </li>
+
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+
+        </ul>
+
+
+        <a href="tickets.html" class="nav-button">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Submit Ticket
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="ticket-page">
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="ticket-hero">
+
+    <div class="ticket-hero-content">
+
+        <div class="breadcrumb">
+
+            <a href="../index.html">Home</a>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+            <span>Submit Ticket</span>
+
+        </div>
+
+
+        <span class="section-label light">
+            FIRST LINE DEFENDERS SERVICE DESK
+        </span>
+
+
+        <h1>
+            How can we help?
+        </h1>
+
+
+        <p>
+            Submit your IT issue or service request using the form below.
+            Our support team will review your request and respond according
+            to its priority level.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     TICKET CONTAINER
+========================================= -->
+
+<section class="ticket-container">
+
+    <div class="ticket-layout">
+
+
+        <!-- =====================================
+             FORM
+        ====================================== -->
+
+        <div>
+
+            <form class="ticket-form-card" id="ticketForm">
+
+                <div class="form-header">
+
+                    <h2>
+                        Submit a Support Request
+                    </h2>
+
+                    <p>
+                        Please provide as much information as possible so our
+                        technicians can resolve your issue efficiently.
+                    </p>
+
+                </div>
+
+
+                <!-- PERSONAL INFORMATION -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="employeeName">
+                            Employee Name <span class="required">*</span>
+                        </label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="employeeName"
+                                class="form-control"
+                                placeholder="Enter your full name"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="employeeEmail">
+                            Email Address <span class="required">*</span>
+                        </label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-envelope"></i>
+
+                            <input
+                                type="email"
+                                id="employeeEmail"
+                                class="form-control"
+                                placeholder="name@company.co.za"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DEPARTMENT / ASSET -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="department">
+                            Department <span class="required">*</span>
+                        </label>
+
+                        <select
+                            id="department"
+                            class="form-control"
+                            required
+                        >
+
+                            <option value="">
+                                Select department
+                            </option>
+
+                            <option>Administration</option>
+                            <option>Finance</option>
+                            <option>Human Resources</option>
+                            <option>Information Technology</option>
+                            <option>Marketing</option>
+                            <option>Operations</option>
+                            <option>Sales</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="assetNumber">
+                            Device / Asset Number
+                        </label>
+
+                        <div class="input-icon">
+
+                            <i class="fa-solid fa-desktop"></i>
+
+                            <input
+                                type="text"
+                                id="assetNumber"
+                                class="form-control"
+                                placeholder="e.g. FLD-PC-001"
+                            >
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ISSUE CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Issue Category <span class="required">*</span>
+                    </label>
+
+                    <select
+                        id="category"
+                        class="form-control"
+                        required
+                    >
+
+                        <option value="">
+                            Select the type of issue
+                        </option>
+
+                        <option>Hardware</option>
+                        <option>Software</option>
+                        <option>Network / Internet</option>
+                        <option>Email / Communication</option>
+                        <option>Printer / Scanner</option>
+                        <option>Account / Password</option>
+                        <option>Security</option>
+                        <option>System Performance</option>
+                        <option>Other</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- SUBJECT -->
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        Issue Subject <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        class="form-control"
+                        placeholder="Briefly describe the problem"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- PRIORITY -->
+
+                <div class="form-group">
+
+                    <label>
+                        Priority <span class="required">*</span>
+                    </label>
+
+
+                    <div class="priority-options">
+
+
+                        <div class="priority-option">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                id="low"
+                                value="Low"
+                                required
+                            >
+
+                            <label
+                                for="low"
+                                class="priority-label"
+                            >
+
+                                Low
+
+                                <span class="priority-description">
+                                    General request
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="priority-option">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                id="medium"
+                                value="Medium"
+                            >
+
+                            <label
+                                for="medium"
+                                class="priority-label"
+                            >
+
+                                Medium
+
+                                <span class="priority-description">
+                                    Work affected
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="priority-option">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                id="high"
+                                value="High"
+                            >
+
+                            <label
+                                for="high"
+                                class="priority-label"
+                            >
+
+                                High
+
+                                <span class="priority-description">
+                                    Major disruption
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <div class="priority-option">
+
+                            <input
+                                type="radio"
+                                name="priority"
+                                id="critical"
+                                value="Critical"
+                            >
+
+                            <label
+                                for="critical"
+                                class="priority-label"
+                            >
+
+                                Critical
+
+                                <span class="priority-description">
+                                    Business stopped
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Describe the Issue <span class="required">*</span>
+                    </label>
+
+                    <textarea
+                        id="description"
+                        class="form-control"
+                        placeholder="Please describe what happened, when the problem started, any error messages you received and what troubleshooting you have already attempted."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- ATTACHMENT -->
+
+                <div class="form-group">
+
+                    <label>
+                        Supporting File
+                    </label>
+
+                    <label
+                        class="upload-area"
+                        for="attachment"
+                    >
+
+                        <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                        <strong>
+                            Click to upload a screenshot or document
+                        </strong>
+
+                        <span>
+                            PNG, JPG or PDF — Maximum 10 MB
+                        </span>
+
+                        <input
+                            type="file"
+                            id="attachment"
+                            accept=".png,.jpg,.jpeg,.pdf"
+                        >
+
+                    </label>
+
+                </div>
+
+
+                <!-- CONTACT METHOD -->
+
+                <div class="form-group">
+
+                    <label for="contactMethod">
+                        Preferred Contact Method
+                    </label>
+
+                    <select
+                        id="contactMethod"
+                        class="form-control"
+                    >
+
+                        <option>Email</option>
+                        <option>Phone</option>
+                        <option>Microsoft Teams</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- ACTIONS -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="reset"
+                        class="reset-button"
+                    >
+
+                        Clear Form
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="submit-ticket-button"
+                    >
+
+                        <i class="fa-solid fa-paper-plane"></i>
+
+                        Submit Support Ticket
+
+                    </button>
+
+                </div>
+
+            </form>
+
+
+            <!-- =====================================
+                 SUCCESS MESSAGE
+            ====================================== -->
+
+            <div
+                class="ticket-success"
+                id="ticketSuccess"
+            >
+
+                <div class="success-icon">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+
+                <h2>
+                    Ticket Submitted Successfully
+                </h2>
+
+
+                <p>
+                    Your support request has been received by the
+                    First Line Defenders Service Desk.
+                </p>
+
+
+                <div
+                    class="ticket-reference"
+                    id="ticketReference"
+                >
+                    FLD-000000
+                </div>
+
+
+                <p>
+                    Please keep this reference number for future enquiries.
+                    Our support team will respond according to the priority
+                    level selected.
+                </p>
+
+
+                <br>
+
+
+                <button
+                    class="primary-button"
+                    onclick="location.reload()"
+                >
+                    Submit Another Ticket
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="ticket-sidebar">
+
+
+            <!-- RESPONSE TIMES -->
+
+            <div class="sidebar-card">
+
+                <h3>
+                    <i class="fa-solid fa-clock"></i>
+                    Expected Response Times
+                </h3>
+
+
+                <div class="response-item">
+
+                    <div class="response-icon">
+                        <i class="fa-solid fa-circle-info"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>Low Priority</strong>
+
+                        <span>
+                            Response within 2 business days
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="response-item">
+
+                    <div class="response-icon">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>Medium Priority</strong>
+
+                        <span>
+                            Response within 1 business day
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="response-item">
+
+                    <div class="response-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>High Priority</strong>
+
+                        <span>
+                            Response within 4 business hours
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="response-item">
+
+                    <div class="response-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>Critical Priority</strong>
+
+                        <span>
+                            Immediate escalation
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- SLA -->
+
+            <div class="sidebar-card">
+
+                <h3>
+                    Service Level Targets
+                </h3>
+
+
+                <table class="sla-table">
+
+                    <tr>
+                        <td>First response</td>
+                        <td>Based on priority</td>
+                    </tr>
+
+                    <tr>
+                        <td>Ticket tracking</td>
+                        <td>Enabled</td>
+                    </tr>
+
+                    <tr>
+                        <td>Escalation</td>
+                        <td>Automatic</td>
+                    </tr>
+
+                    <tr>
+                        <td>Updates</td>
+                        <td>Email</td>
+                    </tr>
+
+                </table>
+
+            </div>
+
+
+            <!-- KNOWLEDGE BASE -->
+
+            <div class="sidebar-card">
+
+                <h3>
+                    Before submitting
+                </h3>
+
+                <p style="
+                    color:#718296;
+                    font-size:10px;
+                    margin-bottom:15px;
+                ">
+
+                    Check our Knowledge Base for quick solutions to
+                    common IT problems.
+
+                </p>
+
+                <a
+                    href="knowledgebase.html"
+                    class="text-link"
+                >
+
+                    Browse Knowledge Base
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+            <!-- EMERGENCY -->
+
+            <div class="sidebar-card emergency-card">
+
+                <h3>
+                    Critical Business Emergency?
+                </h3>
+
+                <p>
+                    If a major system failure is stopping essential
+                    business operations, contact the Service Desk
+                    directly.
+                </p>
+
+                <div class="emergency-contact">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    +27 11 555 0100
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================
+     FOOTER
+========================================= -->
+
+<footer class="footer">
+
+    <div class="footer-grid">
+
+        <div class="footer-brand">
+
+            <a href="../index.html" class="brand">
+
+                <div class="brand-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
+
+                <div>
+
+                    <span class="brand-name">
+                        First Line Defenders
+                    </span>
+
+                    <span class="brand-subtitle">
+                        IT Service Desk
+                    </span>
+
+                </div>
+
+            </a>
+
+            <p>
+                Intelligent IT service management designed to keep
+                organisations connected, productive and prepared.
+            </p>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Portal</h4>
+
+            <a href="../index.html">Home</a>
+            <a href="tickets.html">Submit Ticket</a>
+            <a href="knowledgebase.html">Knowledge Base</a>
+            <a href="dashboard.html">Dashboard</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Team</h4>
+
+            <a href="team.html">Our Team</a>
+            <a href="reports.html">Reports</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h4>Support</h4>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                +27 11 555 0100
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                support@firstlinedefenders.example
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock"></i>
+                Mon - Fri: 08:00 - 17:00
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 First Line Defenders.
+            Intelligent IT Service Desk.
+        </span>
+
+        <span>
+            Version 1.0
+        </span>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    /* =========================================
+       TICKET FORM FUNCTIONALITY
+    ========================================= */
+
+    const ticketForm = document.getElementById("ticketForm");
+
+    const ticketSuccess = document.getElementById("ticketSuccess");
+
+    const ticketReference = document.getElementById("ticketReference");
+
+
+    ticketForm.addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        /*
+            Generate a realistic ticket reference.
+            Example: FLD-482731
+        */
+
+        const randomNumber = Math.floor(
+            100000 + Math.random() * 900000
+        );
+
+        const reference = "FLD-" + randomNumber;
+
+
+        ticketReference.textContent = reference;
+
+
+        ticketForm.style.display = "none";
+
+        ticketSuccess.classList.add("show");
+
+
+        window.scrollTo({
+            top: 250,
+            behavior: "smooth"
+        });
+
+    });
+
+
+    /* =========================================
+       FILE UPLOAD DISPLAY
+    ========================================= */
+
+    const attachment = document.getElementById("attachment");
+
+    const uploadArea = document.querySelector(".upload-area");
+
+
+    attachment.addEventListener("change", function() {
+
+        if (attachment.files.length > 0) {
+
+            uploadArea.querySelector("strong").textContent =
+                attachment.files[0].name;
+
+            uploadArea.querySelector("span").textContent =
+                "File selected successfully";
+
+        }
+
+    });
+
+
+    /* =========================================
+       MOBILE NAVIGATION
+    ========================================= */
+
+    const mobileMenuBtn =
+        document.getElementById("mobileMenuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    if (mobileMenuBtn && navLinks) {
+
+        mobileMenuBtn.addEventListener("click", () => {
+
+            navLinks.classList.toggle("show");
+
+            const icon =
+                mobileMenuBtn.querySelector("i");
+
+
+            if (navLinks.classList.contains("show")) {
+
+                icon.classList.remove("fa-bars");
+
+                icon.classList.add("fa-xmark");
+
+            } else {
+
+                icon.classList.remove("fa-xmark");
+
+                icon.classList.add("fa-bars");
+
+            }
+
+        });
+
+    }
+
+</script>
+
+
+</body>
+
+</html>
