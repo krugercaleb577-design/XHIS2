@@ -1,201 +1,746 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaTech | Service Operations Portal</title>
 
-<title>NovaTech Service Operations Portal</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
-<link rel="stylesheet" href="css/style.css">
-
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<nav>
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
 
-<div class="logo">
+    <header class="site-header">
 
-<i class="fa-solid fa-server"></i>
+        <nav class="navbar">
 
-NovaTech
+            <a href="index.html" class="brand">
 
-</div>
+                <div class="brand-icon">
+                    <i class="fa-solid fa-network-wired"></i>
+                </div>
 
-<ul>
+                <div>
+                    <span class="brand-name">NovaTech</span>
+                    <span class="brand-subtitle">Service Operations</span>
+                </div>
 
-<li><a href="index.html">Home</a></li>
+            </a>
 
-<li><a href="pages/tickets.html">Submit Ticket</a></li>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-<li><a href="pages/knowledgebase.html">Knowledge Base</a></li>
+            <ul class="nav-links" id="navLinks">
 
-<li><a href="pages/team.html">Team</a></li>
+                <li>
+                    <a href="index.html" class="active">Home</a>
+                </li>
 
-<li><a href="pages/dashboard.html">Dashboard</a></li>
+                <li>
+                    <a href="pages/tickets.html">Submit Ticket</a>
+                </li>
 
-<li><a href="pages/reports.html">Reports</a></li>
+                <li>
+                    <a href="pages/knowledgebase.html">Knowledge Base</a>
+                </li>
 
-<li><a href="pages/contact.html">Contact</a></li>
+                <li>
+                    <a href="pages/team.html">Team</a>
+                </li>
 
-</ul>
+                <li>
+                    <a href="pages/dashboard.html">Dashboard</a>
+                </li>
 
-</nav>
+                <li>
+                    <a href="pages/reports.html">Reports</a>
+                </li>
 
-<section class="hero">
+                <li>
+                    <a href="pages/contact.html">Contact</a>
+                </li>
 
-<div class="hero-text">
+            </ul>
 
-<h1>NovaTech Service Operations Portal</h1>
+            <a href="pages/tickets.html" class="nav-button">
+                <i class="fa-solid fa-plus"></i>
+                Submit Ticket
+            </a>
 
-<p>
+        </nav>
 
-A centralized enterprise platform designed to streamline IT service delivery,
-monitor infrastructure health, improve asset lifecycle management and provide
-predictive maintenance insights for business-critical devices.
+    </header>
 
-</p>
 
-<a href="pages/dashboard.html" class="btn">
+    <!-- =========================
+         HERO
+    ========================== -->
 
-Launch Dashboard
+    <main>
 
-</a>
+        <section class="hero">
 
-</div>
+            <div class="hero-grid">
 
-</section>
+                <div class="hero-content">
 
-<section class="about">
+                    <div class="status-pill">
+                        <span class="status-dot"></span>
+                        NovaTech Service Operations Portal
+                    </div>
 
-<h2>Our Mission</h2>
+                    <h1>
+                        Smarter IT Support.
+                        <span>Proactive Technology.</span>
+                    </h1>
 
-<p>
+                    <p class="hero-description">
 
-NovaTech empowers organisations through proactive IT support, intelligent
-monitoring and predictive maintenance. Rather than simply responding to incidents,
-our platform enables businesses to identify risks before they become costly failures.
+                        A centralised service operations platform designed to
+                        simplify IT support, monitor infrastructure performance
+                        and identify technology risks before they become costly
+                        failures.
 
-</p>
+                    </p>
 
-</section>
+                    <div class="hero-buttons">
 
-<section class="cards">
+                        <a href="pages/dashboard.html" class="primary-button">
+                            <i class="fa-solid fa-chart-line"></i>
+                            Open Command Center
+                        </a>
 
-<div class="card">
+                        <a href="pages/tickets.html" class="secondary-button">
+                            <i class="fa-solid fa-ticket"></i>
+                            Log a Support Ticket
+                        </a>
 
-<i class="fa-solid fa-ticket"></i>
+                    </div>
 
-<h3>Support Tickets</h3>
+                    <div class="hero-trust">
 
-<p>
+                        <div class="trust-item">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            Secure Support
+                        </div>
 
-Submit incidents quickly and receive updates throughout the support lifecycle.
+                        <div class="trust-item">
+                            <i class="fa-solid fa-clock"></i>
+                            Fast Response
+                        </div>
 
-</p>
+                        <div class="trust-item">
+                            <i class="fa-solid fa-chart-simple"></i>
+                            Data Driven
+                        </div>
 
-</div>
+                    </div>
 
-<div class="card">
+                </div>
 
-<i class="fa-solid fa-book"></i>
 
-<h3>Knowledge Base</h3>
+                <!-- Hero Dashboard Preview -->
 
-<p>
+                <div class="hero-dashboard">
 
-Browse troubleshooting guides, FAQs and downloadable documentation.
+                    <div class="dashboard-window">
 
-</p>
+                        <div class="window-header">
 
-</div>
+                            <div class="window-controls">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
 
-<div class="card">
+                            <span>Predictive Maintenance</span>
 
-<i class="fa-solid fa-chart-line"></i>
+                            <i class="fa-solid fa-ellipsis"></i>
 
-<h3>Predictive Analytics</h3>
+                        </div>
 
-<p>
+                        <div class="mini-dashboard">
 
-Monitor asset health and identify devices approaching failure.
+                            <div class="mini-title">
+                                <div>
+                                    <small>COMMAND CENTER</small>
+                                    <h3>Device Health Overview</h3>
+                                </div>
 
-</p>
+                                <span class="live-badge">
+                                    <span></span>
+                                    LIVE
+                                </span>
+                            </div>
 
-</div>
+                            <div class="mini-stats">
 
-<div class="card">
+                                <div class="mini-card">
+                                    <span>Devices</span>
+                                    <strong>1,286</strong>
+                                    <small class="positive">
+                                        <i class="fa-solid fa-arrow-up"></i>
+                                        8.4%
+                                    </small>
+                                </div>
 
-<i class="fa-solid fa-network-wired"></i>
+                                <div class="mini-card">
+                                    <span>Open Tickets</span>
+                                    <strong>142</strong>
+                                    <small class="negative">
+                                        <i class="fa-solid fa-arrow-down"></i>
+                                        12.6%
+                                    </small>
+                                </div>
 
-<h3>Infrastructure Monitoring</h3>
+                            </div>
 
-<p>
+                            <div class="health-panel">
 
-Gain visibility into routers, switches, LAN devices and enterprise assets.
+                                <div class="health-header">
+                                    <span>Average Device Health</span>
+                                    <strong>74%</strong>
+                                </div>
 
-</p>
+                                <div class="health-bar">
+                                    <div class="health-progress"></div>
+                                </div>
 
-</div>
+                                <div class="health-labels">
+                                    <span>Critical</span>
+                                    <span>Warning</span>
+                                    <span>Healthy</span>
+                                </div>
 
-</section>
+                            </div>
 
-<section class="stats">
+                            <div class="mini-alert">
 
-<div>
+                                <div class="alert-icon">
+                                    <i class="fa-solid fa-triangle-exclamation"></i>
+                                </div>
 
-<h2>1,286</h2>
+                                <div>
+                                    <strong>12 devices require attention</strong>
+                                    <small>Replacement recommendations available</small>
+                                </div>
 
-<p>Managed Devices</p>
+                                <i class="fa-solid fa-chevron-right"></i>
 
-</div>
+                            </div>
 
-<div>
+                        </div>
 
-<h2>142</h2>
+                    </div>
 
-<p>Open Tickets</p>
+                </div>
 
-</div>
+            </div>
 
-<div>
+        </section>
 
-<h2>67</h2>
 
-<p>Weekly Failures</p>
+        <!-- =========================
+             QUICK ACCESS
+        ========================== -->
 
-</div>
+        <section class="quick-section">
 
-<div>
+            <div class="section-heading">
 
-<h2>74%</h2>
+                <div>
+                    <span class="section-label">SERVICE PORTAL</span>
+                    <h2>How can we help?</h2>
+                </div>
 
-<p>Average Device Health</p>
+                <p>
+                    Access the tools and resources you need to resolve
+                    technical issues quickly.
+                </p>
 
-</div>
+            </div>
 
-</section>
+            <div class="quick-grid">
 
-<footer>
+                <a href="pages/tickets.html" class="quick-card">
 
-<p>
+                    <div class="quick-icon blue">
+                        <i class="fa-solid fa-ticket"></i>
+                    </div>
 
-© 2026 NovaTech Solutions | Service Operations Portal
+                    <div>
+                        <h3>Submit a Ticket</h3>
+                        <p>Report an IT issue or request technical assistance.</p>
+                    </div>
 
-</p>
+                    <i class="fa-solid fa-arrow-right card-arrow"></i>
 
-</footer>
+                </a>
 
-<script src="js/script.js"></script>
+
+                <a href="pages/knowledgebase.html" class="quick-card">
+
+                    <div class="quick-icon purple">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div>
+                        <h3>Knowledge Base</h3>
+                        <p>Find troubleshooting guides and frequently asked questions.</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+                </a>
+
+
+                <a href="pages/dashboard.html" class="quick-card">
+
+                    <div class="quick-icon green">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+
+                    <div>
+                        <h3>Operations Dashboard</h3>
+                        <p>Monitor tickets, devices, failures and service performance.</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+                </a>
+
+
+                <a href="pages/reports.html" class="quick-card">
+
+                    <div class="quick-icon orange">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div>
+                        <h3>Reports & Documents</h3>
+                        <p>Access operational reports, policies and downloadable forms.</p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right card-arrow"></i>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MISSION
+        ========================== -->
+
+        <section class="mission-section">
+
+            <div class="mission-grid">
+
+                <div class="mission-content">
+
+                    <span class="section-label">OUR PURPOSE</span>
+
+                    <h2>
+                        Turning IT support into
+                        <span>proactive service.</span>
+                    </h2>
+
+                    <p>
+                        NovaTech's Service Operations Portal provides a
+                        centralised space where employees can report incidents,
+                        access technical documentation and monitor IT service
+                        performance.
+                    </p>
+
+                    <p>
+                        Our approach goes beyond resolving today's problems.
+                        Through predictive maintenance analytics, NovaTech
+                        can identify ageing devices and recurring failures
+                        before they disrupt business operations.
+                    </p>
+
+                    <a href="pages/dashboard.html" class="text-link">
+                        Explore Predictive Maintenance
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="mission-visual">
+
+                    <div class="network-card">
+
+                        <div class="network-header">
+                            <span>NETWORK STATUS</span>
+                            <span class="online">
+                                <span></span>
+                                Operational
+                            </span>
+                        </div>
+
+                        <div class="network-map">
+
+                            <div class="network-line line-one"></div>
+                            <div class="network-line line-two"></div>
+                            <div class="network-line line-three"></div>
+                            <div class="network-line line-four"></div>
+
+                            <div class="network-node main-node">
+                                <i class="fa-solid fa-server"></i>
+                            </div>
+
+                            <div class="network-node node-one">
+                                <i class="fa-solid fa-desktop"></i>
+                            </div>
+
+                            <div class="network-node node-two">
+                                <i class="fa-solid fa-wifi"></i>
+                            </div>
+
+                            <div class="network-node node-three">
+                                <i class="fa-solid fa-print"></i>
+                            </div>
+
+                            <div class="network-node node-four">
+                                <i class="fa-solid fa-database"></i>
+                            </div>
+
+                        </div>
+
+                        <div class="network-footer">
+
+                            <div>
+                                <strong>99.2%</strong>
+                                <span>Availability</span>
+                            </div>
+
+                            <div>
+                                <strong>24/7</strong>
+                                <span>Monitoring</span>
+                            </div>
+
+                            <div>
+                                <strong>1,286</strong>
+                                <span>Assets</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVICES
+        ========================== -->
+
+        <section class="services-section">
+
+            <div class="section-heading centered">
+
+                <span class="section-label">OUR SERVICES</span>
+
+                <h2>Everything your IT team needs</h2>
+
+                <p>
+                    A centralised platform for support, infrastructure
+                    management and informed technology decisions.
+                </p>
+
+            </div>
+
+            <div class="services-grid">
+
+                <div class="service-card">
+
+                    <div class="service-number">01</div>
+
+                    <i class="fa-solid fa-headset"></i>
+
+                    <h3>IT Service Desk</h3>
+
+                    <p>
+                        Centralise support requests and provide employees
+                        with a clear path to technical assistance.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-number">02</div>
+
+                    <i class="fa-solid fa-network-wired"></i>
+
+                    <h3>Network Infrastructure</h3>
+
+                    <p>
+                        Monitor routers, switches, LAN infrastructure and
+                        other network-connected assets.
+                    </p>
+
+                </div>
+
+
+                <div class="service-card featured">
+
+                    <div class="service-number">03</div>
+
+                    <span class="featured-badge">INNOVATION</span>
+
+                    <i class="fa-solid fa-microchip"></i>
+
+                    <h3>Predictive Maintenance</h3>
+
+                    <p>
+                        Identify devices at risk of failure using ticket
+                        history, device age and calculated health scores.
+                    </p>
+
+                    <a href="pages/dashboard.html">
+                        Explore Command Center
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="service-card">
+
+                    <div class="service-number">04</div>
+
+                    <i class="fa-solid fa-file-shield"></i>
+
+                    <h3>Knowledge Management</h3>
+
+                    <p>
+                        Give users access to policies, troubleshooting
+                        documentation, FAQs and service forms.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             IMPACT
+        ========================== -->
+
+        <section class="impact-section">
+
+            <div class="impact-content">
+
+                <span class="section-label light">EXPECTED IMPACT</span>
+
+                <h2>
+                    Better decisions.
+                    <span>Fewer failures.</span>
+                </h2>
+
+                <p>
+                    Predictive maintenance helps NovaTech reduce unnecessary
+                    support incidents and plan device replacements before
+                    failures affect productivity.
+                </p>
+
+            </div>
+
+            <div class="impact-stats">
+
+                <div class="impact-stat">
+                    <strong data-target="50">0</strong>
+                    <span>Minimum weekly tickets that could be prevented</span>
+                </div>
+
+                <div class="impact-stat">
+                    <strong data-target="80">0</strong>
+                    <span>Potential weekly ticket reduction</span>
+                </div>
+
+                <div class="impact-stat">
+                    <strong data-target="1286">0</strong>
+                    <span>Devices monitored through the portal</span>
+                </div>
+
+                <div class="impact-stat">
+                    <strong>24/7</strong>
+                    <span>Access to service information</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT CTA
+        ========================== -->
+
+        <section class="cta-section">
+
+            <div class="cta-box">
+
+                <div>
+
+                    <span class="section-label">NEED ASSISTANCE?</span>
+
+                    <h2>
+                        Let NovaTech help you solve it.
+                    </h2>
+
+                    <p>
+                        Submit a support ticket or browse our knowledge base
+                        for a quick solution.
+                    </p>
+
+                </div>
+
+                <div class="cta-buttons">
+
+                    <a href="pages/tickets.html" class="primary-button">
+                        Submit Ticket
+                    </a>
+
+                    <a href="pages/contact.html" class="secondary-button dark">
+                        Contact Support
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="brand">
+
+                    <div class="brand-icon">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+
+                    <div>
+                        <span class="brand-name">NovaTech</span>
+                        <span class="brand-subtitle">Service Operations</span>
+                    </div>
+
+                </a>
+
+                <p>
+                    Intelligent IT service management designed to keep
+                    organisations connected, productive and prepared.
+                </p>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Portal</h4>
+
+                <a href="pages/tickets.html">Submit Ticket</a>
+                <a href="pages/knowledgebase.html">Knowledge Base</a>
+                <a href="pages/dashboard.html">Dashboard</a>
+                <a href="pages/reports.html">Reports</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Company</h4>
+
+                <a href="pages/team.html">Our Team</a>
+                <a href="pages/contact.html">Contact Us</a>
+                <a href="#">Service Policy</a>
+                <a href="#">Privacy</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Support</h4>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +27 11 555 0100
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    support@novatech.example
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-clock"></i>
+                    Mon - Fri: 08:00 - 17:00
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © <span id="currentYear">2026</span> NovaTech Solutions.
+                Service Operations Portal.
+            </span>
+
+            <span>
+                Version 1.0
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/script.js"></script>
 
 </body>
 
