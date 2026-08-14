@@ -1,0 +1,1275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | First Line Defenders</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/style.css">
+
+
+    <style>
+
+        .contact-page {
+            min-height: 100vh;
+            background: #f5f8fc;
+        }
+
+
+        /* HERO */
+
+        .contact-hero {
+            padding: 60px 6% 110px;
+            color: white;
+
+            background:
+                radial-gradient(
+                    circle at 85% 15%,
+                    rgba(36,172,255,.25),
+                    transparent 28%
+                ),
+                linear-gradient(
+                    135deg,
+                    #06172c,
+                    #0b426d
+                );
+        }
+
+
+        .contact-hero-inner {
+            max-width: 900px;
+            margin: auto;
+
+            text-align: center;
+        }
+
+
+        .contact-hero h1 {
+            margin: 15px 0 12px;
+
+            font-size: clamp(34px, 5vw, 52px);
+            letter-spacing: -1.5px;
+        }
+
+
+        .contact-hero p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #bfd3e4;
+
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+
+        /* MAIN */
+
+        .contact-container {
+            max-width: 1150px;
+
+            margin: -60px auto 80px;
+
+            padding: 0 4%;
+
+            position: relative;
+            z-index: 5;
+        }
+
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                .85fr 1.35fr;
+
+            gap: 18px;
+        }
+
+
+        /* INFORMATION */
+
+        .contact-info {
+            padding: 27px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #09223d,
+                    #0b426d
+                );
+
+            border-radius: 13px;
+
+            box-shadow:
+                0 15px 35px rgba(7,27,51,.12);
+        }
+
+
+        .contact-info h2 {
+            font-size: 20px;
+        }
+
+
+        .contact-info > p {
+            margin-top: 9px;
+
+            color: #bdd2e3;
+
+            font-size: 9px;
+            line-height: 1.7;
+        }
+
+
+        .contact-details {
+            margin-top: 28px;
+        }
+
+
+        .contact-detail {
+            display: flex;
+
+            gap: 13px;
+
+            padding: 14px 0;
+
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+
+
+        .contact-detail-icon {
+            width: 35px;
+            height: 35px;
+
+            flex-shrink: 0;
+
+            display: grid;
+            place-items: center;
+
+            color: white;
+
+            background: rgba(255,255,255,.1);
+
+            border-radius: 8px;
+        }
+
+
+        .contact-detail h3 {
+            font-size: 9px;
+        }
+
+
+        .contact-detail p {
+            margin-top: 4px;
+
+            color: #b8cede;
+
+            font-size: 8px;
+            line-height: 1.5;
+        }
+
+
+        .status-box {
+            display: flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-top: 25px;
+
+            padding: 12px;
+
+            background: rgba(21,151,108,.13);
+
+            border: 1px solid rgba(21,151,108,.3);
+
+            border-radius: 8px;
+        }
+
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #39d98a;
+
+            box-shadow:
+                0 0 0 4px rgba(57,217,138,.12);
+        }
+
+
+        .status-box strong {
+            display: block;
+
+            font-size: 8px;
+        }
+
+
+        .status-box span {
+            display: block;
+
+            margin-top: 3px;
+
+            color: #a9d8c3;
+
+            font-size: 7px;
+        }
+
+
+        /* FORM */
+
+        .contact-form-card {
+            padding: 28px;
+
+            background: white;
+
+            border: 1px solid #e1e9f1;
+            border-radius: 13px;
+
+            box-shadow:
+                0 12px 35px rgba(7,27,51,.07);
+        }
+
+
+        .contact-form-card h2 {
+            color: #102a43;
+
+            font-size: 19px;
+        }
+
+
+        .contact-form-card > p {
+            margin-top: 7px;
+
+            color: #8493a2;
+
+            font-size: 9px;
+        }
+
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 14px;
+
+            margin-top: 23px;
+        }
+
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+
+            gap: 6px;
+        }
+
+
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+
+
+        .form-group label {
+            color: #314961;
+
+            font-size: 8px;
+            font-weight: 700;
+        }
+
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+
+            width: 100%;
+
+            padding: 11px 12px;
+
+            color: #30465d;
+
+            background: #f9fbfd;
+
+            border: 1px solid #dce5ed;
+            border-radius: 7px;
+
+            outline: none;
+
+            font-family: inherit;
+            font-size: 9px;
+
+            transition: .2s ease;
+        }
+
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+
+            border-color: #0879d1;
+
+            background: white;
+
+            box-shadow:
+                0 0 0 3px rgba(8,121,209,.08);
+
+        }
+
+
+        .form-group textarea {
+            min-height: 110px;
+
+            resize: vertical;
+        }
+
+
+        .priority-options {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 8px;
+        }
+
+
+        .priority-option {
+            position: relative;
+        }
+
+
+        .priority-option input {
+            position: absolute;
+
+            opacity: 0;
+
+            pointer-events: none;
+        }
+
+
+        .priority-option label {
+            display: block;
+
+            padding: 10px;
+
+            color: #607286;
+
+            background: #f8fafc;
+
+            border: 1px solid #dce5ed;
+
+            border-radius: 7px;
+
+            text-align: center;
+
+            cursor: pointer;
+
+            font-size: 8px;
+            font-weight: 700;
+
+            transition: .2s ease;
+        }
+
+
+        .priority-option input:checked + label {
+            color: #0879d1;
+
+            background: #eaf5ff;
+
+            border-color: #0879d1;
+        }
+
+
+        .submit-button {
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 13px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0879d1,
+                    #075c9d
+                );
+
+            border: none;
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-family: inherit;
+            font-size: 9px;
+            font-weight: 800;
+
+            transition: .2s ease;
+        }
+
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(8,121,209,.2);
+        }
+
+
+        /* QUICK LINKS */
+
+        .quick-links {
+            margin-top: 25px;
+        }
+
+
+        .quick-links h2 {
+            color: #102a43;
+
+            font-size: 18px;
+
+            margin-bottom: 13px;
+        }
+
+
+        .quick-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 13px;
+        }
+
+
+        .quick-card {
+            padding: 20px;
+
+            color: #243a51;
+
+            background: white;
+
+            border: 1px solid #e1e9f1;
+            border-radius: 11px;
+
+            text-decoration: none;
+
+            transition: .2s ease;
+        }
+
+
+        .quick-card:hover {
+            transform: translateY(-3px);
+
+            border-color: #b9d8ef;
+
+            box-shadow:
+                0 10px 25px rgba(7,27,51,.06);
+        }
+
+
+        .quick-card i {
+            color: #0879d1;
+
+            font-size: 17px;
+        }
+
+
+        .quick-card h3 {
+            margin-top: 11px;
+
+            font-size: 10px;
+        }
+
+
+        .quick-card p {
+            margin-top: 5px;
+
+            color: #8493a2;
+
+            font-size: 8px;
+
+            line-height: 1.6;
+        }
+
+
+        /* EMERGENCY */
+
+        .emergency {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 20px;
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #7b2222,
+                    #b33a2f
+                );
+
+            border-radius: 12px;
+        }
+
+
+        .emergency h2 {
+            font-size: 16px;
+        }
+
+
+        .emergency p {
+            margin-top: 5px;
+
+            color: #f4d2d0;
+
+            font-size: 8px;
+        }
+
+
+        .emergency-button {
+            white-space: nowrap;
+
+            padding: 11px 16px;
+
+            color: #7b2222;
+
+            background: white;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 8px;
+            font-weight: 800;
+        }
+
+
+        /* RESPONSIVE */
+
+        @media(max-width:850px) {
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+        }
+
+
+        @media(max-width:600px) {
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-group.full {
+                grid-column: auto;
+            }
+
+            .priority-options {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .emergency {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<header class="site-header">
+
+    <nav class="navbar">
+
+        <a href="../index.html" class="brand">
+
+            <div class="brand-icon">
+                <i class="fa-solid fa-network-wired"></i>
+            </div>
+
+            <div>
+
+                <span class="brand-name">
+                    First Line Defenders
+                </span>
+
+                <span class="brand-subtitle">
+                    IT Service Desk
+                </span>
+
+            </div>
+
+        </a>
+
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+        >
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+
+        <ul
+            class="nav-links"
+            id="navLinks"
+        >
+
+            <li>
+                <a href="../index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="tickets.html">
+                    Submit Ticket
+                </a>
+            </li>
+
+            <li>
+                <a href="knowledgebase.html">
+                    Knowledge Base
+                </a>
+            </li>
+
+            <li>
+                <a href="team.html">
+                    Team
+                </a>
+            </li>
+
+            <li>
+                <a href="dashboard.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="reports.html">
+                    Reports
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html" class="active">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+
+        <a
+            href="tickets.html"
+            class="nav-button"
+        >
+
+            <i class="fa-solid fa-plus"></i>
+
+            Submit Ticket
+
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="contact-page">
+
+
+<section class="contact-hero">
+
+    <div class="contact-hero-inner">
+
+        <span class="section-label light">
+            SERVICE DESK SUPPORT
+        </span>
+
+        <h1>
+            Contact First Line Defenders
+        </h1>
+
+        <p>
+            Need technical assistance? Contact our service desk or
+            submit a support request and our team will help you
+            resolve your issue as efficiently as possible.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="contact-container">
+
+
+<div class="contact-grid">
+
+
+<!-- CONTACT INFORMATION -->
+
+<div class="contact-info">
+
+    <h2>
+        Service Desk
+    </h2>
+
+    <p>
+        Our support team is available to assist with technical
+        incidents, service requests and IT-related questions.
+    </p>
+
+
+    <div class="contact-details">
+
+
+        <div class="contact-detail">
+
+            <div class="contact-detail-icon">
+
+                <i class="fa-solid fa-envelope"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Email Support
+                </h3>
+
+                <p>
+                    support@firstlinedefenders.co.za
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-detail">
+
+            <div class="contact-detail-icon">
+
+                <i class="fa-solid fa-phone"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Service Desk
+                </h3>
+
+                <p>
+                    +27 10 000 0000
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-detail">
+
+            <div class="contact-detail-icon">
+
+                <i class="fa-solid fa-clock"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Operating Hours
+                </h3>
+
+                <p>
+                    Monday – Friday<br>
+                    08:00 – 17:00
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="contact-detail">
+
+            <div class="contact-detail-icon">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Service Location
+                </h3>
+
+                <p>
+                    NovaTech Service Operations Centre
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="status-box">
+
+        <div class="status-dot"></div>
+
+        <div>
+
+            <strong>
+                Service Desk Online
+            </strong>
+
+            <span>
+                Support team available during operating hours.
+            </span>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- FORM -->
+
+<div class="contact-form-card">
+
+    <h2>
+        Send Us a Message
+    </h2>
+
+    <p>
+        Complete the form below and a service desk representative
+        will review your request.
+    </p>
+
+
+    <form id="contactForm">
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="name@company.com"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="department">
+                    Department
+                </label>
+
+                <input
+                    type="text"
+                    id="department"
+                    placeholder="e.g. Finance"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="subject">
+                    Subject
+                </label>
+
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="What do you need help with?"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Priority
+                </label>
+
+
+                <div class="priority-options">
+
+
+                    <div class="priority-option">
+
+                        <input
+                            type="radio"
+                            id="low"
+                            name="priority"
+                            value="Low"
+                            checked
+                        >
+
+                        <label for="low">
+                            Low
+                        </label>
+
+                    </div>
+
+
+                    <div class="priority-option">
+
+                        <input
+                            type="radio"
+                            id="medium"
+                            name="priority"
+                            value="Medium"
+                        >
+
+                        <label for="medium">
+                            Medium
+                        </label>
+
+                    </div>
+
+
+                    <div class="priority-option">
+
+                        <input
+                            type="radio"
+                            id="high"
+                            name="priority"
+                            value="High"
+                        >
+
+                        <label for="high">
+                            High
+                        </label>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label for="message">
+                    Message
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Describe the problem or request..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="submit-button"
+        >
+
+            <i class="fa-solid fa-paper-plane"></i>
+
+            Send Message
+
+        </button>
+
+
+    </form>
+
+</div>
+
+
+</div>
+
+
+<!-- QUICK LINKS -->
+
+<section class="quick-links">
+
+    <h2>
+        Quick Support
+    </h2>
+
+
+    <div class="quick-grid">
+
+
+        <a
+            href="tickets.html"
+            class="quick-card"
+        >
+
+            <i class="fa-solid fa-ticket"></i>
+
+            <h3>
+                Submit a Ticket
+            </h3>
+
+            <p>
+                Log an IT incident or service request.
+            </p>
+
+        </a>
+
+
+        <a
+            href="knowledgebase.html"
+            class="quick-card"
+        >
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <h3>
+                Knowledge Base
+            </h3>
+
+            <p>
+                Find solutions to common IT problems.
+            </p>
+
+        </a>
+
+
+        <a
+            href="dashboard.html"
+            class="quick-card"
+        >
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <h3>
+                Command Center
+            </h3>
+
+            <p>
+                View predictive maintenance information.
+            </p>
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- EMERGENCY -->
+
+<div class="emergency">
+
+    <div>
+
+        <h2>
+            Critical IT Incident?
+        </h2>
+
+        <p>
+            For major service interruptions affecting business
+            operations, contact the service desk immediately.
+        </p>
+
+    </div>
+
+
+    <a
+        href="tel:+27100000000"
+        class="emergency-button"
+    >
+
+        <i class="fa-solid fa-phone"></i>
+
+        Call Service Desk
+
+    </a>
+
+</div>
+
+
+</section>
+
+</main>
+
+
+<script>
+
+
+    const mobileMenuBtn =
+        document.getElementById("mobileMenuBtn");
+
+    const navLinks =
+        document.getElementById("navLinks");
+
+
+    if (mobileMenuBtn && navLinks) {
+
+        mobileMenuBtn.addEventListener("click", () => {
+
+            navLinks.classList.toggle("show");
+
+            const icon =
+                mobileMenuBtn.querySelector("i");
+
+
+            if (navLinks.classList.contains("show")) {
+
+                icon.classList.remove("fa-bars");
+
+                icon.classList.add("fa-xmark");
+
+            } else {
+
+                icon.classList.remove("fa-xmark");
+
+                icon.classList.add("fa-bars");
+
+            }
+
+        });
+
+    }
+
+
+    /* CONTACT FORM */
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+
+    if (contactForm) {
+
+        contactForm.addEventListener(
+            "submit",
+            function(event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value;
+
+
+                const subject =
+                    document.getElementById("subject").value;
+
+
+                const priority =
+                    document.querySelector(
+                        'input[name="priority"]:checked'
+                    ).value;
+
+
+                alert(
+                    "Message submitted successfully!\\n\\n" +
+                    "Thank you, " + name + ".\\n" +
+                    "Subject: " + subject + "\\n" +
+                    "Priority: " + priority + "\\n\\n" +
+                    "A First Line Defenders representative will review your request."
+                );
+
+
+                contactForm.reset();
+
+            }
+        );
+
+    }
+
+</script>
+
+
+</body>
+
+</html>

@@ -9,7 +9,7 @@
     <title>Command Center | First Line Defenders</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin">
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -22,29 +22,26 @@
 
     <style>
 
-        /* =====================================================
-           FIRST LINE DEFENDERS
-           PREDICTIVE MAINTENANCE COMMAND CENTER
-        ===================================================== */
+        /* =========================
+           COMMAND CENTER
+        ========================= */
 
         .dashboard-page {
             min-height: 100vh;
-            background: #f5f8fc;
+            background: #f4f7fa;
         }
 
 
-        /* =====================================================
-           DASHBOARD HERO
-        ===================================================== */
+        /* HERO */
 
         .dashboard-hero {
-            padding: 55px 6% 100px;
+            padding: 55px 6% 105px;
             color: white;
 
             background:
                 radial-gradient(
                     circle at 85% 15%,
-                    rgba(36, 172, 255, .25),
+                    rgba(36,172,255,.25),
                     transparent 28%
                 ),
                 linear-gradient(
@@ -54,102 +51,77 @@
                 );
         }
 
-        .dashboard-header {
-            max-width: 1320px;
+
+        .dashboard-hero-inner {
+            max-width: 1180px;
             margin: auto;
-
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 30px;
         }
 
-        .dashboard-title-area {
-            max-width: 700px;
-        }
 
-        .dashboard-title-area h1 {
-            margin: 14px 0 12px;
+        .dashboard-hero h1 {
+            margin: 14px 0 10px;
 
-            font-size: clamp(32px, 4vw, 52px);
-            line-height: 1.05;
+            font-size: clamp(34px, 5vw, 50px);
 
             letter-spacing: -1.5px;
         }
 
-        .dashboard-title-area p {
-            color: #b9d0e3;
-            font-size: 13px;
-            line-height: 1.7;
-        }
 
-        .dashboard-date {
-            padding: 12px 16px;
+        .dashboard-hero p {
+            max-width: 700px;
 
-            color: #c4d9e9;
+            color: #bfd3e4;
 
-            background: rgba(255,255,255,.08);
+            font-size: 11px;
 
-            border: 1px solid rgba(255,255,255,.12);
-
-            border-radius: 9px;
-
-            font-size: 10px;
+            line-height: 1.8;
         }
 
 
-        /* =====================================================
-           DASHBOARD CONTAINER
-        ===================================================== */
+        /* CONTAINER */
 
         .dashboard-container {
-            max-width: 1320px;
+            max-width: 1180px;
 
             margin: -55px auto 80px;
 
             padding: 0 4%;
 
             position: relative;
+
             z-index: 5;
         }
 
 
-        /* =====================================================
-           STAT CARDS
-        ===================================================== */
+        /* TOP STAT CARDS */
 
-        .stat-grid {
+        .dashboard-stats {
             display: grid;
 
             grid-template-columns:
                 repeat(4, 1fr);
 
-            gap: 16px;
+            gap: 14px;
         }
 
-        .stat-card {
-            padding: 22px;
+
+        .dashboard-stat {
+            padding: 21px;
 
             background: white;
 
             border: 1px solid #e1e9f1;
 
-            border-radius: 13px;
+            border-radius: 12px;
 
             box-shadow:
-                0 15px 35px rgba(7,27,51,.08);
+                0 12px 30px rgba(7,27,51,.07);
         }
 
-        .stat-card-top {
-            display: flex;
 
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .stat-icon {
-            width: 38px;
-            height: 38px;
+        .dashboard-stat-icon {
+            width: 35px;
+            height: 35px;
 
             display: grid;
             place-items: center;
@@ -158,450 +130,351 @@
 
             background: #eaf5ff;
 
-            border-radius: 9px;
+            border-radius: 8px;
         }
 
-        .stat-card h3 {
-            margin-top: 15px;
 
-            color: #071b33;
+        .dashboard-stat strong {
+            display: block;
 
-            font-size: 27px;
+            margin-top: 12px;
+
+            color: #122b45;
+
+            font-size: 25px;
         }
 
-        .stat-card p {
+
+        .dashboard-stat span {
+            display: block;
+
             margin-top: 4px;
 
-            color: #75879a;
+            color: #8493a2;
 
-            font-size: 10px;
-        }
-
-        .stat-change {
-            color: #16a673;
-
-            font-size: 9px;
-            font-weight: 700;
+            font-size: 8px;
         }
 
 
-        /* =====================================================
-           SECTION
-        ===================================================== */
+        /* SECTION */
 
         .dashboard-section {
             margin-top: 28px;
         }
 
-        .dashboard-section-heading {
+
+        .dashboard-section-header {
             display: flex;
 
-            align-items: center;
             justify-content: space-between;
 
-            margin-bottom: 15px;
+            align-items: end;
+
+            margin-bottom: 14px;
         }
 
-        .dashboard-section-heading h2 {
-            color: #071b33;
 
-            font-size: 17px;
+        .dashboard-section-header h2 {
+            color: #102a43;
+
+            font-size: 18px;
         }
 
-        .dashboard-section-heading p {
+
+        .dashboard-section-header p {
+            margin-top: 4px;
+
             color: #8493a2;
 
-            font-size: 9px;
+            font-size: 8px;
         }
 
 
-        /* =====================================================
-           ANALYTICS CARDS
-        ===================================================== */
+        /* HEALTH INFO */
 
-        .analytics-grid {
+        .formula-card {
             display: grid;
 
             grid-template-columns:
-                1.35fr 1fr;
+                1.4fr 1fr;
 
             gap: 18px;
-        }
 
-        .analytics-card {
             padding: 25px;
 
             background: white;
 
             border: 1px solid #e1e9f1;
 
-            border-radius: 13px;
+            border-radius: 12px;
 
             box-shadow:
-                0 10px 30px rgba(7,27,51,.05);
+                0 8px 25px rgba(7,27,51,.04);
         }
 
-        .analytics-card h3 {
-            color: #142b43;
+
+        .formula-card h3 {
+            color: #1b334b;
 
             font-size: 13px;
         }
 
-        .analytics-card-subtitle {
-            margin-top: 4px;
 
-            color: #8493a2;
+        .formula-card p {
+            margin-top: 8px;
 
-            font-size: 9px;
-        }
-
-
-        /* =====================================================
-           FAILURE BARS
-        ===================================================== */
-
-        .failure-list {
-            margin-top: 25px;
-        }
-
-        .failure-item {
-            margin-bottom: 17px;
-        }
-
-        .failure-label {
-            display: flex;
-
-            justify-content: space-between;
-
-            margin-bottom: 6px;
-
-            color: #506277;
+            color: #718296;
 
             font-size: 9px;
-            font-weight: 600;
-        }
 
-        .failure-bar {
-            height: 7px;
-
-            overflow: hidden;
-
-            background: #edf2f6;
-
-            border-radius: 20px;
-        }
-
-        .failure-progress {
-            height: 100%;
-
-            border-radius: 20px;
-
-            background: #138ad3;
+            line-height: 1.7;
         }
 
 
-        /* =====================================================
-           HEALTH SUMMARY
-        ===================================================== */
+        .formula {
+            margin-top: 16px;
 
-        .health-summary {
-            display: grid;
+            padding: 14px;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+            color: #0879d1;
 
-            gap: 12px;
+            background: #edf7ff;
 
-            margin-top: 23px;
-        }
+            border: 1px solid #d5eafa;
 
-        .health-box {
-            padding: 18px 12px;
+            border-radius: 8px;
 
             text-align: center;
 
-            border-radius: 9px;
-        }
+            font-size: 12px;
 
-        .health-box strong {
-            display: block;
-
-            font-size: 22px;
-        }
-
-        .health-box span {
-            display: block;
-
-            margin-top: 4px;
-
-            font-size: 8px;
-            font-weight: 700;
-        }
-
-        .health-yellow {
-            color: #987200;
-            background: #fff7d6;
-        }
-
-        .health-orange {
-            color: #b65c00;
-            background: #fff0dc;
-        }
-
-        .health-black {
-            color: #ffffff;
-            background: #17212c;
+            font-weight: 800;
         }
 
 
-        /* =====================================================
-           COST INSIGHT
-        ===================================================== */
-
-        .cost-grid {
+        .risk-legend {
             display: grid;
 
             grid-template-columns:
-                1fr 1fr;
+                repeat(4, 1fr);
 
-            gap: 14px;
+            gap: 8px;
 
-            margin-top: 22px;
+            align-items: center;
         }
 
-        .cost-box {
-            padding: 18px;
 
-            border-radius: 9px;
+        .risk-item {
+            padding: 12px 8px;
 
             background: #f8fafc;
 
-            border: 1px solid #edf1f5;
+            border-radius: 8px;
+
+            text-align: center;
         }
 
-        .cost-box span {
+
+        .risk-dot {
+            width: 15px;
+            height: 15px;
+
+            margin: auto auto 7px;
+
+            border-radius: 50%;
+        }
+
+
+        .yellow-dot {
+            background: #e4bd25;
+        }
+
+
+        .review-dot {
+            background: #78909c;
+        }
+
+
+        .orange-dot {
+            background: #ed8616;
+        }
+
+
+        .black-dot {
+            background: #101820;
+        }
+
+
+        .risk-item strong {
             display: block;
 
-            color: #8292a3;
+            color: #314961;
 
             font-size: 8px;
         }
 
-        .cost-box strong {
+
+        .risk-item span {
             display: block;
 
-            margin-top: 5px;
+            margin-top: 3px;
 
-            color: #122b45;
+            color: #8493a2;
 
-            font-size: 18px;
-        }
-
-        .cost-box small {
-            display: block;
-
-            margin-top: 4px;
-
-            color: #16a673;
-
-            font-size: 8px;
+            font-size: 7px;
         }
 
 
-        /* =====================================================
-           DEVICE TABLE
-        ===================================================== */
+        /* DEVICE TABLE */
 
-        .device-card {
+        .device-table-card {
             overflow: hidden;
 
             background: white;
 
             border: 1px solid #e1e9f1;
 
-            border-radius: 13px;
+            border-radius: 12px;
 
             box-shadow:
-                0 10px 30px rgba(7,27,51,.05);
+                0 8px 25px rgba(7,27,51,.04);
         }
 
-        .device-toolbar {
+
+        .device-table-top {
             display: flex;
 
             justify-content: space-between;
+
             align-items: center;
 
-            gap: 15px;
-
-            padding: 18px 20px;
+            padding: 20px;
 
             border-bottom: 1px solid #edf1f5;
         }
 
-        .device-search {
-            width: 260px;
 
-            padding: 10px 12px;
+        .device-table-top h3 {
+            color: #1b334b;
 
-            background: #f8fafc;
-
-            border: 1px solid #dce5ed;
-
-            border-radius: 7px;
-
-            outline: none;
-
-            font-family: inherit;
-            font-size: 9px;
+            font-size: 13px;
         }
 
-        .device-filter {
-            padding: 10px;
 
-            background: #f8fafc;
+        .device-table-top span {
+            color: #8493a2;
 
-            border: 1px solid #dce5ed;
-
-            border-radius: 7px;
-
-            font-family: inherit;
-            font-size: 9px;
+            font-size: 8px;
         }
 
-        .device-table-wrapper {
+
+        .table-wrapper {
             overflow-x: auto;
         }
+
 
         .device-table {
             width: 100%;
 
-            border-collapse: collapse;
+            min-width: 850px;
 
-            min-width: 900px;
+            border-collapse: collapse;
         }
 
-        .device-table th {
-            padding: 12px 18px;
 
-            color: #8292a3;
+        .device-table th {
+            padding: 12px 16px;
+
+            color: #8493a2;
 
             background: #f9fbfd;
 
             text-align: left;
 
-            font-size: 8px;
-            font-weight: 700;
+            font-size: 7px;
 
             text-transform: uppercase;
-            letter-spacing: .5px;
         }
 
+
         .device-table td {
-            padding: 15px 18px;
+            padding: 14px 16px;
 
             color: #506277;
 
             border-top: 1px solid #edf1f5;
 
-            font-size: 9px;
-        }
-
-        .device-table td strong {
-            color: #20364d;
-        }
-
-
-        /* =====================================================
-           STATUS
-        ===================================================== */
-
-        .status-pill {
-            display: inline-flex;
-
-            align-items: center;
-
-            gap: 6px;
-
-            padding: 5px 9px;
-
-            border-radius: 20px;
-
             font-size: 8px;
+        }
+
+
+        .device-name {
+            color: #20364d;
+
             font-weight: 700;
         }
 
-        .status-dot {
-            width: 6px;
-            height: 6px;
-
-            border-radius: 50%;
-        }
-
-        .status-yellow {
-            color: #8d7000;
-            background: #fff7d6;
-        }
-
-        .status-yellow .status-dot {
-            background: #e6bd00;
-        }
-
-        .status-orange {
-            color: #a65300;
-            background: #fff0dc;
-        }
-
-        .status-orange .status-dot {
-            background: #f18a1a;
-        }
-
-        .status-black {
-            color: white;
-            background: #17212c;
-        }
-
-        .status-black .status-dot {
-            background: #ffffff;
-        }
-
-
-        /* =====================================================
-           HEALTH SCORE
-        ===================================================== */
 
         .health-score {
             font-weight: 800;
         }
 
-        .score-good {
-            color: #15976c;
-        }
 
-        .score-warning {
-            color: #d77900;
-        }
+        /* RISK BADGES */
 
-        .score-critical {
-            color: #202b35;
-        }
-
-
-        /* =====================================================
-           CHANGE REQUEST BUTTON
-        ===================================================== */
-
-        .change-request-button {
+        .risk-badge {
             display: inline-flex;
 
             align-items: center;
 
-            gap: 6px;
+            gap: 5px;
 
+            padding: 5px 8px;
+
+            border-radius: 20px;
+
+            font-size: 7px;
+
+            font-weight: 800;
+        }
+
+
+        .risk-badge.yellow {
+            color: #806900;
+
+            background: #fff7c7;
+        }
+
+
+        .risk-badge.review {
+            color: #54656e;
+
+            background: #e9eef1;
+        }
+
+
+        .risk-badge.orange {
+            color: #a54d00;
+
+            background: #fff0df;
+        }
+
+
+        .risk-badge.black {
+            color: white;
+
+            background: #101820;
+        }
+
+
+        /* CHANGE REQUEST */
+
+        .change-request-btn {
             padding: 7px 10px;
 
             color: white;
 
-            background: #17212c;
+            background: #b3261e;
 
             border: none;
 
@@ -611,245 +484,293 @@
 
             font-family: inherit;
 
-            font-size: 8px;
-            font-weight: 700;
+            font-size: 7px;
+
+            font-weight: 800;
 
             transition: .2s ease;
         }
 
-        .change-request-button:hover {
-            background: #0879d1;
+
+        .change-request-btn:hover {
+            background: #8e1d18;
 
             transform: translateY(-1px);
         }
 
-        .monitoring-text {
-            color: #94a1ae;
+
+        .monitor-text {
+            color: #8493a2;
+
+            font-size: 7px;
+        }
+
+
+        /* FAILURES */
+
+        .failure-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 14px;
+        }
+
+
+        .failure-card {
+            padding: 21px;
+
+            background: white;
+
+            border: 1px solid #e1e9f1;
+
+            border-radius: 11px;
+        }
+
+
+        .failure-card-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .failure-card i {
+            color: #0879d1;
+
+            font-size: 15px;
+        }
+
+
+        .failure-card strong {
+            color: #20364d;
+
+            font-size: 20px;
+        }
+
+
+        .failure-card h3 {
+            margin-top: 12px;
+
+            color: #334b63;
+
+            font-size: 10px;
+        }
+
+
+        .failure-card p {
+            margin-top: 5px;
+
+            color: #8493a2;
 
             font-size: 8px;
         }
 
 
-        /* =====================================================
-           CHANGE REQUEST MODAL
-        ===================================================== */
+        /* CHANGE REQUEST MODAL */
 
         .modal-overlay {
-            display: none;
-
             position: fixed;
 
             inset: 0;
 
-            z-index: 1000;
+            display: none;
 
             align-items: center;
+
             justify-content: center;
 
             padding: 20px;
 
-            background: rgba(3,15,29,.65);
+            background: rgba(3,15,28,.7);
 
-            backdrop-filter: blur(5px);
+            z-index: 9999;
         }
+
 
         .modal-overlay.show {
             display: flex;
         }
 
-        .modal {
-            width: 100%;
-            max-width: 480px;
 
-            padding: 30px;
+        .change-modal {
+            width: 100%;
+
+            max-width: 520px;
+
+            padding: 27px;
 
             background: white;
 
-            border-radius: 15px;
+            border-radius: 13px;
 
-            box-shadow: 0 25px 80px rgba(0,0,0,.25);
+            box-shadow:
+                0 25px 70px rgba(0,0,0,.25);
         }
 
-        .modal-icon {
-            width: 50px;
-            height: 50px;
 
-            display: grid;
-
-            place-items: center;
-
-            margin-bottom: 15px;
-
-            color: white;
-
-            background: #17212c;
-
-            border-radius: 10px;
-        }
-
-        .modal h2 {
-            color: #071b33;
-
-            font-size: 20px;
-        }
-
-        .modal p {
-            margin-top: 8px;
-
-            color: #718296;
-
-            font-size: 10px;
-
-            line-height: 1.6;
-        }
-
-        .change-details {
-            margin: 20px 0;
-
-            padding: 15px;
-
-            background: #f7f9fb;
-
-            border: 1px solid #e6edf3;
-
-            border-radius: 8px;
-        }
-
-        .change-details div {
+        .modal-header {
             display: flex;
 
             justify-content: space-between;
 
-            padding: 6px 0;
-
-            color: #718296;
-
-            font-size: 9px;
+            align-items: center;
         }
 
-        .change-details strong {
-            color: #26384b;
+
+        .modal-header h2 {
+            color: #102a43;
+
+            font-size: 17px;
         }
 
-        .modal-actions {
-            display: flex;
 
-            justify-content: flex-end;
-
-            gap: 8px;
-        }
-
-        .modal-button {
-            padding: 10px 15px;
-
-            border-radius: 7px;
+        .modal-close {
+            width: 30px;
+            height: 30px;
 
             border: none;
 
-            font-family: inherit;
+            color: #607286;
 
-            font-size: 9px;
-            font-weight: 700;
+            background: #f1f4f7;
+
+            border-radius: 50%;
 
             cursor: pointer;
         }
 
-        .modal-cancel {
-            color: #66778a;
 
-            background: #eef2f6;
+        .request-status {
+            margin-top: 18px;
+
+            padding: 12px;
+
+            color: #8e1d18;
+
+            background: #fff0ef;
+
+            border: 1px solid #ffd1ce;
+
+            border-radius: 8px;
+
+            font-size: 8px;
+
+            font-weight: 700;
         }
 
-        .modal-confirm {
+
+        .request-details {
+            margin-top: 17px;
+        }
+
+
+        .request-row {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            padding: 10px 0;
+
+            border-bottom: 1px solid #edf1f5;
+
+            font-size: 8px;
+        }
+
+
+        .request-row span {
+            color: #8493a2;
+        }
+
+
+        .request-row strong {
+            color: #263d54;
+
+            text-align: right;
+        }
+
+
+        .modal-actions {
+            display: flex;
+
+            gap: 8px;
+
+            margin-top: 20px;
+        }
+
+
+        .modal-actions button {
+            flex: 1;
+
+            padding: 11px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-family: inherit;
+
+            font-size: 8px;
+
+            font-weight: 800;
+        }
+
+
+        .confirm-btn {
             color: white;
 
-            background: #17212c;
+            background: #0879d1;
         }
 
 
-        /* =====================================================
-           EXCEL PLACEHOLDER
-        ===================================================== */
+        .cancel-btn {
+            color: #506277;
 
-        .excel-placeholder {
-            padding: 35px;
-
-            text-align: center;
-
-            background: white;
-
-            border: 1.5px dashed #cbd8e4;
-
-            border-radius: 13px;
-        }
-
-        .excel-placeholder i {
-            margin-bottom: 12px;
-
-            color: #15976c;
-
-            font-size: 30px;
-        }
-
-        .excel-placeholder h3 {
-            color: #243a51;
-
-            font-size: 14px;
-        }
-
-        .excel-placeholder p {
-            max-width: 550px;
-
-            margin: 7px auto 0;
-
-            color: #8493a2;
-
-            font-size: 9px;
-
-            line-height: 1.6;
+            background: #edf1f5;
         }
 
 
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
+        /* RESPONSIVE */
 
-        @media(max-width:1000px) {
+        @media(max-width:900px) {
 
-            .stat-grid {
+            .dashboard-stats {
                 grid-template-columns:
-                    repeat(2,1fr);
+                    repeat(2, 1fr);
             }
 
-            .analytics-grid {
+            .formula-card {
                 grid-template-columns: 1fr;
+            }
+
+            .failure-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
 
         }
 
 
-        @media(max-width:650px) {
+        @media(max-width:600px) {
 
-            .dashboard-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .stat-grid {
+            .dashboard-stats {
                 grid-template-columns: 1fr;
             }
 
-            .health-summary {
+            .risk-legend {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .failure-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .device-toolbar {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .device-search {
-                width: 100%;
             }
 
         }
@@ -861,10 +782,6 @@
 
 <body>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
 
 <header class="site-header">
 
@@ -895,11 +812,16 @@
             class="mobile-menu-btn"
             id="mobileMenuBtn"
         >
+
             <i class="fa-solid fa-bars"></i>
+
         </button>
 
 
-        <ul class="nav-links" id="navLinks">
+        <ul
+            class="nav-links"
+            id="navLinks"
+        >
 
             <li>
                 <a href="../index.html">
@@ -926,10 +848,7 @@
             </li>
 
             <li>
-                <a
-                    href="dashboard.html"
-                    class="active"
-                >
+                <a href="dashboard.html" class="active">
                     Dashboard
                 </a>
             </li>
@@ -968,156 +887,126 @@
 <main class="dashboard-page">
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <section class="dashboard-hero">
 
-    <div class="dashboard-header">
+    <div class="dashboard-hero-inner">
 
-        <div class="dashboard-title-area">
+        <span class="section-label light">
+            NOVATECH SERVICE OPERATIONS
+        </span>
 
-            <span class="section-label light">
-                PREDICTIVE MAINTENANCE
-            </span>
+        <h1>
+            Predictive Maintenance Command Center
+        </h1>
 
-            <h1>
-                Command Center
-            </h1>
-
-            <p>
-                A centralised operational view of service tickets,
-                recurring failures, device age and equipment health.
-                Use predictive insights to identify replacement risks
-                before they become costly business disruptions.
-            </p>
-
-        </div>
-
-
-        <div class="dashboard-date">
-
-            <i class="fa-solid fa-calendar"></i>
-
-            Live Operations Dashboard
-
-        </div>
+        <p>
+            Monitor service tickets, device age, recurring failures
+            and maintenance risk from one central dashboard. Identify
+            aging devices early and initiate replacement requests
+            before failures disrupt operations.
+        </p>
 
     </div>
 
 </section>
 
 
-<!-- =====================================================
-     DASHBOARD
-===================================================== -->
-
 <section class="dashboard-container">
 
 
-    <!-- =================================================
-         STATISTICS
-    ================================================== -->
+<!-- STATISTICS -->
 
-    <div class="stat-grid">
+<div class="dashboard-stats">
 
 
-        <div class="stat-card">
+    <div class="dashboard-stat">
 
-            <div class="stat-card-top">
-
-                <div class="stat-icon">
-                    <i class="fa-solid fa-ticket"></i>
-                </div>
-
-                <span class="stat-change">
-                    ↓ 18% this month
-                </span>
-
-            </div>
-
-            <h3 data-target="124">
-                0
-            </h3>
-
-            <p>
-                Active Support Tickets
-            </p>
-
+        <div class="dashboard-stat-icon">
+            <i class="fa-solid fa-ticket"></i>
         </div>
 
+        <strong id="totalTickets">
+            124
+        </strong>
 
-        <div class="stat-card">
+        <span>
+            Total Active Tickets
+        </span>
 
-            <div class="stat-card-top">
+    </div>
 
-                <div class="stat-icon">
-                    <i class="fa-solid fa-triangle-exclamation"></i>
-                </div>
 
-                <span class="stat-change">
-                    Recurring issues
-                </span>
+    <div class="dashboard-stat">
 
-            </div>
-
-            <h3 data-target="37">
-                0
-            </h3>
-
-            <p>
-                Recurring Failures
-            </p>
-
+        <div class="dashboard-stat-icon">
+            <i class="fa-solid fa-triangle-exclamation"></i>
         </div>
 
+        <strong id="highRiskCount">
+            1
+        </strong>
 
-        <div class="stat-card">
+        <span>
+            High-Risk Devices
+        </span>
 
-            <div class="stat-card-top">
+    </div>
 
-                <div class="stat-icon">
-                    <i class="fa-solid fa-desktop"></i>
-                </div>
 
-                <span class="stat-change">
-                    Monitored
-                </span>
+    <div class="dashboard-stat">
 
-            </div>
-
-            <h3 data-target="86">
-                0
-            </h3>
-
-            <p>
-                Devices Monitored
-            </p>
-
+        <div class="dashboard-stat-icon">
+            <i class="fa-solid fa-rotate"></i>
         </div>
 
+        <strong>
+            37
+        </strong>
 
-        <div class="stat-card">
+        <span>
+            Recurring Failures
+        </span>
 
-            <div class="stat-card-top">
+    </div>
 
-                <div class="stat-icon">
-                    <i class="fa-solid fa-arrows-rotate"></i>
-                </div>
 
-                <span class="stat-change">
-                    Replacement risks
-                </span>
+    <div class="dashboard-stat">
 
-            </div>
+        <div class="dashboard-stat-icon">
+            <i class="fa-solid fa-arrow-trend-down"></i>
+        </div>
 
-            <h3 data-target="11">
-                0
-            </h3>
+        <strong>
+            18%
+        </strong>
+
+        <span>
+            Ticket Reduction
+        </span>
+
+    </div>
+
+
+</div>
+
+
+<!-- FORMULA -->
+
+<section class="dashboard-section">
+
+
+    <div class="dashboard-section-header">
+
+        <div>
+
+            <h2>
+                Predictive Health Model
+            </h2>
 
             <p>
-                Devices Requiring Review
+                Automated device risk calculation
             </p>
 
         </div>
@@ -1125,704 +1014,307 @@
     </div>
 
 
-    <!-- =================================================
-         ANALYTICS
-    ================================================== -->
+    <div class="formula-card">
 
-    <div class="dashboard-section">
 
-        <div class="dashboard-section-heading">
-
-            <div>
-
-                <h2>
-                    Predictive Maintenance Overview
-                </h2>
-
-                <p>
-                    Current operational indicators
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="analytics-grid">
-
-
-            <!-- FAILURE ANALYSIS -->
-
-            <div class="analytics-card">
-
-                <h3>
-                    Recurring Failure Analysis
-                </h3>
-
-                <p class="analytics-card-subtitle">
-                    Most common service desk incidents
-                </p>
-
-
-                <div class="failure-list">
-
-
-                    <div class="failure-item">
-
-                        <div class="failure-label">
-
-                            <span>
-                                System Performance
-                            </span>
-
-                            <span>
-                                42%
-                            </span>
-
-                        </div>
-
-                        <div class="failure-bar">
-
-                            <div
-                                class="failure-progress"
-                                style="width:42%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="failure-item">
-
-                        <div class="failure-label">
-
-                            <span>
-                                Hardware Failure
-                            </span>
-
-                            <span>
-                                31%
-                            </span>
-
-                        </div>
-
-                        <div class="failure-bar">
-
-                            <div
-                                class="failure-progress"
-                                style="width:31%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="failure-item">
-
-                        <div class="failure-label">
-
-                            <span>
-                                Network Connectivity
-                            </span>
-
-                            <span>
-                                19%
-                            </span>
-
-                        </div>
-
-                        <div class="failure-bar">
-
-                            <div
-                                class="failure-progress"
-                                style="width:19%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="failure-item">
-
-                        <div class="failure-label">
-
-                            <span>
-                                Software Issues
-                            </span>
-
-                            <span>
-                                8%
-                            </span>
-
-                        </div>
-
-                        <div class="failure-bar">
-
-                            <div
-                                class="failure-progress"
-                                style="width:8%"
-                            ></div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- HEALTH DISTRIBUTION -->
-
-            <div class="analytics-card">
-
-                <h3>
-                    Device Health Distribution
-                </h3>
-
-                <p class="analytics-card-subtitle">
-                    Devices grouped by maintenance status
-                </p>
-
-
-                <div class="health-summary">
-
-                    <div class="health-box health-yellow">
-
-                        <strong>
-                            51
-                        </strong>
-
-                        <span>
-                            YELLOW
-                        </span>
-
-                    </div>
-
-
-                    <div class="health-box health-orange">
-
-                        <strong>
-                            24
-                        </strong>
-
-                        <span>
-                            ORANGE
-                        </span>
-
-                    </div>
-
-
-                    <div class="health-box health-black">
-
-                        <strong>
-                            11
-                        </strong>
-
-                        <span>
-                            BLACK
-                        </span>
-
-                    </div>
-
-                </div>
-
-
-                <div class="cost-grid">
-
-                    <div class="cost-box">
-
-                        <span>
-                            Estimated Repair Cost
-                        </span>
-
-                        <strong>
-                            R42,500
-                        </strong>
-
-                        <small>
-                            Current projection
-                        </small>
-
-                    </div>
-
-
-                    <div class="cost-box">
-
-                        <span>
-                            Estimated Replacement
-                        </span>
-
-                        <strong>
-                            R68,900
-                        </strong>
-
-                        <small>
-                            Planned replacement value
-                        </small>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =================================================
-         DEVICE MONITORING
-    ================================================== -->
-
-    <div class="dashboard-section">
-
-        <div class="dashboard-section-heading">
-
-            <div>
-
-                <h2>
-                    Device Health Monitoring
-                </h2>
-
-                <p>
-                    Health Score = 100 − (Tickets × 5) + (Age in Months × 0.5)
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="device-card">
-
-
-            <div class="device-toolbar">
-
-                <input
-                    type="text"
-                    class="device-search"
-                    id="deviceSearch"
-                    placeholder="Search device, employee or department..."
-                >
-
-
-                <select
-                    class="device-filter"
-                    id="statusFilter"
-                >
-
-                    <option value="all">
-                        All Statuses
-                    </option>
-
-                    <option value="yellow">
-                        Yellow
-                    </option>
-
-                    <option value="orange">
-                        Orange
-                    </option>
-
-                    <option value="black">
-                        Black
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <div class="device-table-wrapper">
-
-                <table class="device-table">
-
-                    <thead>
-
-                        <tr>
-
-                            <th>
-                                Device
-                            </th>
-
-                            <th>
-                                Assigned To
-                            </th>
-
-                            <th>
-                                Department
-                            </th>
-
-                            <th>
-                                Age
-                            </th>
-
-                            <th>
-                                Tickets
-                            </th>
-
-                            <th>
-                                Health Score
-                            </th>
-
-                            <th>
-                                Status
-                            </th>
-
-                            <th>
-                                Action
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody id="deviceTableBody">
-
-
-                        <!-- DEVICE 1 -->
-
-                        <tr
-                            data-status="yellow"
-                            data-search="fld pc 001 naledi matlou finance"
-                        >
-
-                            <td>
-                                <strong>
-                                    FLD-PC-001
-                                </strong>
-                            </td>
-
-                            <td>
-                                Naledi Matlou
-                            </td>
-
-                            <td>
-                                Finance
-                            </td>
-
-                            <td>
-                                24 months
-                            </td>
-
-                            <td>
-                                3
-                            </td>
-
-                            <td class="health-score score-good">
-                                92
-                            </td>
-
-                            <td>
-
-                                <span class="status-pill status-yellow">
-
-                                    <span class="status-dot"></span>
-
-                                    Yellow
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <span class="monitoring-text">
-                                    Monitoring
-                                </span>
-
-                            </td>
-
-                        </tr>
-
-
-                        <!-- DEVICE 2 -->
-
-                        <tr
-                            data-status="orange"
-                            data-search="fld pc 002 caleb kruger it"
-                        >
-
-                            <td>
-                                <strong>
-                                    FLD-PC-002
-                                </strong>
-                            </td>
-
-                            <td>
-                                Caleb Kruger
-                            </td>
-
-                            <td>
-                                IT
-                            </td>
-
-                            <td>
-                                60 months
-                            </td>
-
-                            <td>
-                                6
-                            </td>
-
-                            <td class="health-score score-warning">
-                                100 - (6 × 5) + (60 × 0.5) = 70
-                            </td>
-
-                            <td>
-
-                                <span class="status-pill status-orange">
-
-                                    <span class="status-dot"></span>
-
-                                    Orange
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <span class="monitoring-text">
-                                    Review
-                                </span>
-
-                            </td>
-
-                        </tr>
-
-
-                        <!-- DEVICE 3 -->
-
-                        <tr
-                            data-status="orange"
-                            data-search="fld pc 003 bapelelw dlamini operations"
-                        >
-
-                            <td>
-                                <strong>
-                                    FLD-PC-003
-                                </strong>
-                            </td>
-
-                            <td>
-                                Bapelelw Dlamini
-                            </td>
-
-                            <td>
-                                Operations
-                            </td>
-
-                            <td>
-                                72 months
-                            </td>
-
-                            <td>
-                                5
-                            </td>
-
-                            <td class="health-score score-warning">
-                                85
-                            </td>
-
-                            <td>
-
-                                <span class="status-pill status-orange">
-
-                                    <span class="status-dot"></span>
-
-                                    Orange
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <span class="monitoring-text">
-                                    Review
-                                </span>
-
-                            </td>
-
-                        </tr>
-
-
-                        <!-- DEVICE 4 -->
-
-                        <tr
-                            data-status="black"
-                            data-search="fld pc 004 kealebaga montsho marketing"
-                        >
-
-                            <td>
-                                <strong>
-                                    FLD-PC-004
-                                </strong>
-                            </td>
-
-                            <td>
-                                Kealebaga Montsho
-                            </td>
-
-                            <td>
-                                Marketing
-                            </td>
-
-                            <td>
-                                96 months
-                            </td>
-
-                            <td>
-                                9
-                            </td>
-
-                            <td class="health-score score-critical">
-                                103
-                            </td>
-
-                            <td>
-
-                                <span class="status-pill status-black">
-
-                                    <span class="status-dot"></span>
-
-                                    Black
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <button
-                                    class="change-request-button"
-                                    onclick="openChangeRequest('FLD-PC-004','Kealebaga Montsho','Marketing','96 months','9','103')"
-                                >
-
-                                    <i class="fa-solid fa-arrows-rotate"></i>
-
-                                    Generate Change Request
-
-                                </button>
-
-                            </td>
-
-                        </tr>
-
-
-                        <!-- DEVICE 5 -->
-
-                        <tr
-                            data-status="yellow"
-                            data-search="fld pc 005 tanice zikalala human resources"
-                        >
-
-                            <td>
-                                <strong>
-                                    FLD-PC-005
-                                </strong>
-                            </td>
-
-                            <td>
-                                Tanice Zikalala
-                            </td>
-
-                            <td>
-                                Human Resources
-                            </td>
-
-                            <td>
-                                30 months
-                            </td>
-
-                            <td>
-                                2
-                            </td>
-
-                            <td class="health-score score-good">
-                                105
-                            </td>
-
-                            <td>
-
-                                <span class="status-pill status-yellow">
-
-                                    <span class="status-dot"></span>
-
-                                    Yellow
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <span class="monitoring-text">
-                                    Monitoring
-                                </span>
-
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- =================================================
-         EXCEL VISUALS
-    ================================================== -->
-
-    <div class="dashboard-section">
-
-        <div class="dashboard-section-heading">
-
-            <div>
-
-                <h2>
-                    Operational Data Visualisation
-                </h2>
-
-                <p>
-                    Reserved for group Excel analysis
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="excel-placeholder">
-
-            <i class="fa-solid fa-file-excel"></i>
+        <div>
 
             <h3>
-                Excel Visuals Integration Area
+                Health Score Calculation
             </h3>
 
             <p>
-                This section is intentionally reserved for the Excel
-                charts and visualisations produced by the project team.
-                The completed visuals can be integrated here once the
-                group's analysis is finalised.
+                The Command Center uses ticket frequency and device
+                age to calculate a maintenance score. This allows
+                the service desk to identify devices requiring
+                attention before they become major incidents.
+            </p>
+
+
+            <div class="formula">
+
+                100 − (Tickets × 5) + (Age in Months × 0.5)
+
+            </div>
+
+        </div>
+
+
+        <div>
+
+            <h3>
+                Risk Classification
+            </h3>
+
+
+            <div class="risk-legend">
+
+
+                <div class="risk-item">
+
+                    <div class="risk-dot yellow-dot"></div>
+
+                    <strong>
+                        Yellow
+                    </strong>
+
+                    <span>
+                        Under 40
+                    </span>
+
+                </div>
+
+
+                <div class="risk-item">
+
+                    <div class="risk-dot review-dot"></div>
+
+                    <strong>
+                        Review
+                    </strong>
+
+                    <span>
+                        40–49
+                    </span>
+
+                </div>
+
+
+                <div class="risk-item">
+
+                    <div class="risk-dot orange-dot"></div>
+
+                    <strong>
+                        Orange
+                    </strong>
+
+                    <span>
+                        50–80
+                    </span>
+
+                </div>
+
+
+                <div class="risk-item">
+
+                    <div class="risk-dot black-dot"></div>
+
+                    <strong>
+                        Black
+                    </strong>
+
+                    <span>
+                        Over 80
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- DEVICES -->
+
+<section class="dashboard-section">
+
+
+    <div class="dashboard-section-header">
+
+        <div>
+
+            <h2>
+                Device Health Monitoring
+            </h2>
+
+            <p>
+                Automated maintenance risk assessment
             </p>
 
         </div>
 
     </div>
+
+
+    <div class="device-table-card">
+
+
+        <div class="device-table-top">
+
+            <h3>
+                Registered Devices
+            </h3>
+
+            <span id="deviceCount">
+                5 devices monitored
+            </span>
+
+        </div>
+
+
+        <div class="table-wrapper">
+
+
+            <table class="device-table">
+
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Device
+                        </th>
+
+                        <th>
+                            Department
+                        </th>
+
+                        <th>
+                            Age
+                        </th>
+
+                        <th>
+                            Tickets
+                        </th>
+
+                        <th>
+                            Health Score
+                        </th>
+
+                        <th>
+                            Risk Status
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="deviceTableBody">
+
+
+                </tbody>
+
+
+            </table>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- FAILURES -->
+
+<section class="dashboard-section">
+
+
+    <div class="dashboard-section-header">
+
+        <div>
+
+            <h2>
+                Recurring Failure Analysis
+            </h2>
+
+            <p>
+                Common problems identified across the service desk
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="failure-grid">
+
+
+        <div class="failure-card">
+
+            <div class="failure-card-header">
+
+                <i class="fa-solid fa-hard-drive"></i>
+
+                <strong>
+                    18
+                </strong>
+
+            </div>
+
+            <h3>
+                Storage Failures
+            </h3>
+
+            <p>
+                Hard-drive and storage-related incidents.
+            </p>
+
+        </div>
+
+
+        <div class="failure-card">
+
+            <div class="failure-card-header">
+
+                <i class="fa-solid fa-memory"></i>
+
+                <strong>
+                    11
+                </strong>
+
+            </div>
+
+            <h3>
+                Memory Issues
+            </h3>
+
+            <p>
+                RAM-related crashes and performance problems.
+            </p>
+
+        </div>
+
+
+        <div class="failure-card">
+
+            <div class="failure-card-header">
+
+                <i class="fa-solid fa-wifi"></i>
+
+                <strong>
+                    8
+                </strong>
+
+            </div>
+
+            <h3>
+                Network Failures
+            </h3>
+
+            <p>
+                Connectivity and network-access incidents.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
 
 
 </section>
@@ -1830,39 +1322,47 @@
 </main>
 
 
-<!-- =====================================================
-     CHANGE REQUEST MODAL
-===================================================== -->
+<!-- CHANGE REQUEST MODAL -->
 
 <div
     class="modal-overlay"
     id="changeRequestModal"
 >
 
-    <div class="modal">
 
-        <div class="modal-icon">
+    <div class="change-modal">
 
-            <i class="fa-solid fa-arrows-rotate"></i>
+
+        <div class="modal-header">
+
+            <h2>
+                Replacement Change Request
+            </h2>
+
+            <button
+                class="modal-close"
+                id="closeModal"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
 
         </div>
 
 
-        <h2>
-            Generate Replacement Change Request
-        </h2>
+        <div class="request-status">
 
+            <i class="fa-solid fa-triangle-exclamation"></i>
 
-        <p>
-            This device has reached the Black maintenance status.
-            A replacement change request should be created to prevent
-            future service disruption.
-        </p>
+            High-risk device detected. Replacement recommended.
+
+        </div>
 
 
         <div
-            class="change-details"
-            id="changeDetails"
+            class="request-details"
+            id="requestDetails"
         >
 
         </div>
@@ -1871,19 +1371,21 @@
         <div class="modal-actions">
 
             <button
-                class="modal-button modal-cancel"
-                onclick="closeChangeRequest()"
+                class="cancel-btn"
+                id="cancelRequest"
             >
+
                 Cancel
+
             </button>
 
 
             <button
-                class="modal-button modal-confirm"
-                onclick="confirmChangeRequest()"
+                class="confirm-btn"
+                id="confirmRequest"
             >
 
-                <i class="fa-solid fa-check"></i>
+                <i class="fa-solid fa-file-circle-plus"></i>
 
                 Create Change Request
 
@@ -1891,254 +1393,530 @@
 
         </div>
 
+
     </div>
 
 </div>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
 <script>
 
-    /* =====================================================
-       MOBILE NAVIGATION
-    ===================================================== */
 
-    const mobileMenuBtn =
-        document.getElementById("mobileMenuBtn");
-
-    const navLinks =
-        document.getElementById("navLinks");
+/* =========================
+   MOBILE MENU
+========================= */
 
 
-    if (mobileMenuBtn && navLinks) {
+const mobileMenuBtn =
+    document.getElementById("mobileMenuBtn");
 
-        mobileMenuBtn.addEventListener("click", () => {
-
-            navLinks.classList.toggle("show");
-
-            const icon =
-                mobileMenuBtn.querySelector("i");
+const navLinks =
+    document.getElementById("navLinks");
 
 
-            if (navLinks.classList.contains("show")) {
+if (mobileMenuBtn && navLinks) {
 
-                icon.classList.remove("fa-bars");
+    mobileMenuBtn.addEventListener("click", () => {
 
-                icon.classList.add("fa-xmark");
+        navLinks.classList.toggle("show");
 
-            } else {
+        const icon =
+            mobileMenuBtn.querySelector("i");
 
-                icon.classList.remove("fa-xmark");
 
-                icon.classList.add("fa-bars");
+        if (navLinks.classList.contains("show")) {
 
-            }
+            icon.classList.remove("fa-bars");
 
-        });
+            icon.classList.add("fa-xmark");
 
+        } else {
+
+            icon.classList.remove("fa-xmark");
+
+            icon.classList.add("fa-bars");
+
+        }
+
+    });
+
+}
+
+
+/* =========================
+   DEVICE DATA
+========================= */
+
+
+const devices = [
+
+    {
+        id: "FLD-PC-001",
+        department: "Finance",
+        age: 24,
+        tickets: 2
+    },
+
+    {
+        id: "FLD-PC-002",
+        department: "Human Resources",
+        age: 60,
+        tickets: 6
+    },
+
+    {
+        id: "FLD-PC-003",
+        department: "Operations",
+        age: 72,
+        tickets: 5
+    },
+
+    {
+        id: "FLD-PC-004",
+        department: "Finance",
+        age: 96,
+        tickets: 9
+    },
+
+    {
+        id: "FLD-PC-005",
+        department: "IT Support",
+        age: 36,
+        tickets: 1
     }
 
-
-    /* =====================================================
-       DEVICE SEARCH
-    ===================================================== */
-
-    const deviceSearch =
-        document.getElementById("deviceSearch");
-
-    const statusFilter =
-        document.getElementById("statusFilter");
-
-    const deviceRows =
-        document.querySelectorAll("#deviceTableBody tr");
+];
 
 
-    function filterDevices() {
-
-        const searchValue =
-            deviceSearch.value.toLowerCase();
-
-        const statusValue =
-            statusFilter.value;
+/* =========================
+   HEALTH SCORE
+========================= */
 
 
-        deviceRows.forEach(row => {
+function calculateHealthScore(age, tickets) {
 
-            const searchText =
-                row.dataset.search.toLowerCase();
-
-            const rowStatus =
-                row.dataset.status;
-
-
-            const matchesSearch =
-                searchText.includes(searchValue);
-
-
-            const matchesStatus =
-                statusValue === "all" ||
-                rowStatus === statusValue;
-
-
-            row.style.display =
-                matchesSearch && matchesStatus
-                    ? ""
-                    : "none";
-
-        });
-
-    }
-
-
-    deviceSearch.addEventListener(
-        "input",
-        filterDevices
+    return Math.round(
+        100 -
+        (tickets * 5) +
+        (age * 0.5)
     );
 
-
-    statusFilter.addEventListener(
-        "change",
-        filterDevices
-    );
+}
 
 
-    /* =====================================================
-       CHANGE REQUEST
-    ===================================================== */
-
-    const modal =
-        document.getElementById("changeRequestModal");
-
-    const changeDetails =
-        document.getElementById("changeDetails");
+/* =========================
+   RISK STATUS
+========================= */
 
 
-    function openChangeRequest(
-        device,
-        employee,
-        department,
-        age,
-        tickets,
-        score
-    ) {
+function getRiskStatus(score) {
 
-        changeDetails.innerHTML = `
+    /*
+       The assignment specifies:
 
-            <div>
-                <span>Device</span>
-                <strong>${device}</strong>
-            </div>
+       Under 40 = Yellow
+       50–80 = Orange
+       Over 80 = Black
 
-            <div>
-                <span>Assigned To</span>
-                <strong>${employee}</strong>
-            </div>
-
-            <div>
-                <span>Department</span>
-                <strong>${department}</strong>
-            </div>
-
-            <div>
-                <span>Device Age</span>
-                <strong>${age}</strong>
-            </div>
-
-            <div>
-                <span>Support Tickets</span>
-                <strong>${tickets}</strong>
-            </div>
-
-            <div>
-                <span>Health Score</span>
-                <strong>${score}</strong>
-            </div>
-
-        `;
+       40–49 is therefore shown as
+       Review so no score is left undefined.
+    */
 
 
-        modal.classList.add("show");
+    if (score < 40) {
+
+        return {
+            name: "Yellow",
+            className: "yellow"
+        };
 
     }
 
 
-    function closeChangeRequest() {
+    if (score >= 40 && score < 50) {
 
-        modal.classList.remove("show");
+        return {
+            name: "Review",
+            className: "review"
+        };
 
     }
 
 
-    function confirmChangeRequest() {
+    if (score >= 50 && score <= 80) {
 
-        const changeNumber =
-            "CR-" +
-            Math.floor(
-                100000 + Math.random() * 900000
-            );
+        return {
+            name: "Orange",
+            className: "orange"
+        };
 
-
-        changeDetails.innerHTML = `
-
-            <div style="
-                display:block;
-                text-align:center;
-                padding:15px;
-            ">
-
-                <strong style="
-                    display:block;
-                    font-size:18px;
-                    color:#15976c;
-                    margin-bottom:8px;
-                ">
-                    Change Request Created
-                </strong>
-
-                <span style="
-                    display:block;
-                    color:#718296;
-                    margin-bottom:5px;
-                ">
-                    Replacement request reference
-                </span>
-
-                <strong style="
-                    font-size:20px;
-                    color:#071b33;
-                ">
-                    ${changeNumber}
-                </strong>
-
-            </div>
-
-        `;
+    }
 
 
-        document.querySelector(".modal-actions").innerHTML = `
+    return {
+        name: "Black",
+        className: "black"
+    };
+
+}
+
+
+/* =========================
+   BUILD DEVICE TABLE
+========================= */
+
+
+const tableBody =
+    document.getElementById("deviceTableBody");
+
+
+let highRiskDevices = 0;
+
+
+devices.forEach(device => {
+
+
+    const score =
+        calculateHealthScore(
+            device.age,
+            device.tickets
+        );
+
+
+    const risk =
+        getRiskStatus(score);
+
+
+    if (risk.name === "Black") {
+
+        highRiskDevices++;
+
+    }
+
+
+    const row =
+        document.createElement("tr");
+
+
+    let actionHTML;
+
+
+    if (risk.name === "Black") {
+
+        actionHTML = `
 
             <button
-                class="modal-button modal-confirm"
-                onclick="closeChangeRequest()"
+                class="change-request-btn"
+                onclick="openChangeRequest('${device.id}')"
             >
 
-                Close
+                <i class="fa-solid fa-rotate"></i>
+
+                Replacement Request
 
             </button>
 
         `;
 
+    } else {
+
+        actionHTML = `
+
+            <span class="monitor-text">
+
+                Monitor
+
+            </span>
+
+        `;
+
     }
 
 
-    /* =====================================================
-       CLOSE MODAL WHEN CLICKING OUTSIDE
-    ===================================================== */
+    row.innerHTML = `
 
-    modal.addEventListener("click", function(event) {
+        <td>
+
+            <span class="device-name">
+                ${device.id}
+            </span>
+
+        </td>
+
+
+        <td>
+            ${device.department}
+        </td>
+
+
+        <td>
+            ${device.age} months
+        </td>
+
+
+        <td>
+            ${device.tickets}
+        </td>
+
+
+        <td>
+
+            <span class="health-score">
+                ${score}
+            </span>
+
+        </td>
+
+
+        <td>
+
+            <span class="risk-badge ${risk.className}">
+
+                ${risk.name}
+
+            </span>
+
+        </td>
+
+
+        <td>
+
+            ${actionHTML}
+
+        </td>
+
+    `;
+
+
+    tableBody.appendChild(row);
+
+});
+
+
+/* Update high-risk count */
+
+
+document.getElementById("highRiskCount")
+    .textContent = highRiskDevices;
+
+
+/* =========================
+   CHANGE REQUEST
+========================= */
+
+
+const modal =
+    document.getElementById("changeRequestModal");
+
+
+const requestDetails =
+    document.getElementById("requestDetails");
+
+
+let selectedDevice = null;
+
+
+function openChangeRequest(deviceId) {
+
+
+    selectedDevice =
+        devices.find(
+            device =>
+                device.id === deviceId
+        );
+
+
+    if (!selectedDevice) {
+
+        return;
+
+    }
+
+
+    const score =
+        calculateHealthScore(
+            selectedDevice.age,
+            selectedDevice.tickets
+        );
+
+
+    requestDetails.innerHTML = `
+
+        <div class="request-row">
+
+            <span>
+                Device ID
+            </span>
+
+            <strong>
+                ${selectedDevice.id}
+            </strong>
+
+        </div>
+
+
+        <div class="request-row">
+
+            <span>
+                Department
+            </span>
+
+            <strong>
+                ${selectedDevice.department}
+            </strong>
+
+        </div>
+
+
+        <div class="request-row">
+
+            <span>
+                Device Age
+            </span>
+
+            <strong>
+                ${selectedDevice.age} months
+            </strong>
+
+        </div>
+
+
+        <div class="request-row">
+
+            <span>
+                Recorded Tickets
+            </span>
+
+            <strong>
+                ${selectedDevice.tickets}
+            </strong>
+
+        </div>
+
+
+        <div class="request-row">
+
+            <span>
+                Health Score
+            </span>
+
+            <strong>
+                ${score}
+            </strong>
+
+        </div>
+
+
+        <div class="request-row">
+
+            <span>
+                Recommended Action
+            </span>
+
+            <strong>
+                Replace Device
+            </strong>
+
+        </div>
+
+    `;
+
+
+    modal.classList.add("show");
+
+}
+
+
+/* =========================
+   CLOSE MODAL
+========================= */
+
+
+function closeChangeRequest() {
+
+    modal.classList.remove("show");
+
+    selectedDevice = null;
+
+}
+
+
+document
+    .getElementById("closeModal")
+    .addEventListener(
+        "click",
+        closeChangeRequest
+    );
+
+
+document
+    .getElementById("cancelRequest")
+    .addEventListener(
+        "click",
+        closeChangeRequest
+    );
+
+
+/* =========================
+   CONFIRM REQUEST
+========================= */
+
+
+document
+    .getElementById("confirmRequest")
+    .addEventListener(
+        "click",
+        () => {
+
+
+            if (!selectedDevice) {
+
+                return;
+
+            }
+
+
+            const requestNumber =
+                "CR-" +
+                new Date().getFullYear() +
+                "-" +
+                Math.floor(
+                    1000 +
+                    Math.random() * 9000
+                );
+
+
+            alert(
+
+                "Change Request Created Successfully!\\n\\n" +
+
+                "Request ID: " +
+                requestNumber +
+                "\\n" +
+
+                "Device: " +
+                selectedDevice.id +
+                "\\n" +
+
+                "Action: Replacement\\n\\n" +
+
+                "The replacement request has been sent to Service Operations."
+
+            );
+
+
+            closeChangeRequest();
+
+        }
+    );
+
+
+/* Close when clicking outside */
+
+
+modal.addEventListener(
+    "click",
+    event => {
 
         if (event.target === modal) {
 
@@ -2146,7 +1924,9 @@
 
         }
 
-    });
+    }
+);
+
 
 </script>
 
